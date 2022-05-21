@@ -42,29 +42,29 @@
         .cont{
             width: 89%;
             background: white;
-            padding: 10px;
+            padding: 5px;
             border-radius: 8px;
             margin-top: 10px;
             margin-left: 5%;
-            border: 1px solid black;
+            border: .5px solid black;
         }
         .conts{
             width: 40%;
             background: white;
-            padding: 10px;
+            padding: 5px;
             border-radius: 8px;
             margin-top: 10px;
             margin-left: 5%;
-            border: 1px solid black;
+            border: .5px solid black;
         }
         .contss{
             width: 89%;
             background: white;
-            padding: 10px;
+            padding: 5px;
             border-radius: 8px;
             margin-top: 10px;
             margin-left: 5%;
-            border: 1px solid black;
+            border: .5px solid black;
         }
         .ints{
             border: none;

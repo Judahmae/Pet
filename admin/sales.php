@@ -34,7 +34,6 @@
         <li><a href = "/Pet/admin/add_products.php"><img src="../uploads/box.svg" class="navicons">Add Product</a></li>
         <li><a href = "/Pet/admin/deliveries.php"><img src="../uploads/deliver.svg" class="navicons">Deliveries(<?php echo count_deliveries();?>)</a></li>
         <li><a href = "/Pet/admin/viewall_orders.php"><img src="../uploads/deliver.svg" class="navicons">Orders(<?php echo count_orders();?>)</a></li>
-        <li><a href= "/Pet/admin/viewall_coupons.php"><img src="../uploads/coupon.svg" class="navicons">Coupons</a></li> 
         <li><a href= "/Pet/admin/users.php"><img src="../uploads/user.svg" class="navicons">Users</a></li> 
         <li class = 'selection' ><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Sales Inventory</a></li>
         <li><a href= "/Pet/admin/petcenterApplication.php"><img src="../uploads/deliver.svg" class="navicons">Pet Center Application</a></li>
@@ -49,9 +48,13 @@
 </div>
 <div id="bodyright">
 <p class = 'hed'>Transaction History</p>
+<br><br><br>
+<div class = 'btnssss'>
 <form method = 'GET' action = 'date_sales.php' enctpye = 'multipart/form-data'>
-    <input type = 'date'  name = 'date' />
-    <button name = 'get_date'>Search date</button>
+<div class = 'unity'>
+    <input class = 'searchBar' type = 'date'  name = 'date' />
+    <button class = 'btnS' name = 'get_date'>Search date</button>
+</div>
 </form>
 <div class="buttons">
 <button id = "btnExport" value = "PRINT"><img class ='printPic' src = '../uploads/print.png'> PRINT</button>
@@ -59,7 +62,7 @@
     <button id = "pdf"><img class ='printPic' src = '../uploads/pdf.png'>EXPORT TO PDF</button>
     
 </div>
-   
+</div>
     <br>
 <div class = "body">
 

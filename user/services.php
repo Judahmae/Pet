@@ -33,7 +33,27 @@
         <div class="bottomDiv">
         <h3>Grooming Services</h3>
               <div class = 'fDogs'>
-                   <?php viewall_services(); ?>
+                   <?php featured_service_grooming(); ?>
+                   </div>
+        </div>
+        <h3>Hotel Services</h3>
+              <div class = 'fDogs'>
+                   <?php featured_service_hotel(); ?>
+                   </div>
+        </div>
+        <h3>Pet Training</h3>
+              <div class = 'fDogs'>
+                   <?php featured_service_training(); ?>
+                   </div>
+        </div>
+        <h3>Vet Clinic</h3>
+              <div class = 'fDogs'>
+                   <?php featured_service_vet_clinic(); ?>
+                   </div>
+        </div>
+        <h3>Others</h3>
+              <div class = 'fDogs'>
+                   <?php featured_service_others(); ?>
                    </div>
         </div>
         </div>

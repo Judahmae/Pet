@@ -452,17 +452,16 @@
             $body = "
             Greetings!
 
-            Your Order has been confirmed and will be delivered on $delivery_date 
+            Your order has been confirmed and will be delivered on $delivery_date with order #$order_id 
 
-            Order Number: $order_id
-            Items: $items
+            Items include: 
+            $items
 
-            Please do keep your lines open because your items will be arrived to your
-            destination according to the delivery date.
-            Thank you for purchasing to our store hopefully you're 
-            happy with those items you purchased. 
+            Please keep your lines open because your items will arrive at your destination according to the aforementioned delivery date. 
+            
+            Thank you for being part of Pet Society where we treat your pet as our family. Enjoy!
 
-            Lovely store,
+            Meow,
             Pet Society
             ";
             $sender = "ianjohn0101@gmail.com";
@@ -647,12 +646,11 @@
             $body = "
             Greetings!
 
-            Your Order has been delivered on $today
+            Your order has been delivered on $today.
 
-            Thank you for purchasing to our store hopefully you're 
-            happy with those items you purchased. 
+            Thank you for being part of Pet Society where we treat your pet as our family. Enjoy!
 
-            Lovely store,
+            Arf arf,
             Pet Society
             ";
             $sender = "ianjohn0101@gmail.com";
@@ -871,7 +869,7 @@
                    
                     <input type = 'hidden' name = 'email' value = '".$row['email']."' />
                     <input type = 'hidden' name = 'pet_center_id' value = '".$row['pet_center_id']."' />
-                    <button class = 'btnV' name = 'view'>View</button>
+                    <a href = view_application.php?view=".$row['pet_center_id'].">View</a>
                 </div>
                
             </form>";
@@ -1051,6 +1049,7 @@
                 <p class = 'lebs'>".$row['org_name']."</p>
                 <p class = 'lebs'>".$row['contact_number']."</p>
                 <p class = 'lebs'>".$row['date_confirmed']."</p>
+                <p class = 'lebs'>".$row['coupon_code']."</p>
             </div>
            
         </form>";

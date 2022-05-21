@@ -846,6 +846,7 @@ function updateThumbnail(dropZoneElement, file) {
                         <input type = 'hidden' name = 'service_name' value = '".$service_name."' />
                         <input type = 'hidden' name = 'reserve_id' value = ".$reserve_id." />
                         <input type = 'hidden' name = 'date' value = '".$date."' />
+                        <input type = 'hidden' name = 'reserve_time' value = ".date('g:i A', strtotime($row2['reserve_time']))." />
                         <p class = 'asds'>".$user_username."</p>
                         <p  class = 'asd'>".date('g:i A', strtotime($row2['reserve_time']))."</p>
                         <p class = 'asds'>".$service_name."</p>";
@@ -891,6 +892,9 @@ function updateThumbnail(dropZoneElement, file) {
                     $user_id = $_POST['user_id'];
                     $coupon_code = $_POST['coupon_code'];
                     $date_confirmed = $_POST['date_confirmed'];
+                    $reserve_time = $_POST['reserve_time'];
+
+                    $time = date('g:i A', strtotime($reserve_time));
                     $amount = $_POST['service_cost'];
                     $transaction_code = generateRandomString();
 
@@ -906,10 +910,9 @@ function updateThumbnail(dropZoneElement, file) {
                     "
                     Greetings! 
             
-                    This is from $service_name we are hoping for your best experience for the service we provide. 
-                    Please come with the respective date $date, with the Transacton Code: $transaction_code
-                    
-                    Respecfully yours,
+                    This is from $service_name. We are glad to inform you that your reservation with us has been confirmed. Please come on $date at $time, and present us your transaction code: $transaction_code.
+
+                    Regards,
                     $service_name";
                     $sender = "ianjohn0101@gmail.com";
 
@@ -922,7 +925,9 @@ function updateThumbnail(dropZoneElement, file) {
                         coupon_code,
                         transaction_code,
                         date_confirmed,
-                        amount
+                        amount,
+                        status
+
                         
                     ) 
                     VALUES
@@ -933,7 +938,8 @@ function updateThumbnail(dropZoneElement, file) {
                         '$coupon_code',
                         '$transaction_code',
                         '$today',
-                        '$service_cost'
+                        '$service_cost',
+                        'NOT USED'
                     )");
                     
                     if(!$confirm->execute())
@@ -1546,9 +1552,26 @@ function updateThumbnail(dropZoneElement, file) {
                                 }
                                 
                             echo "</div>
-                        </form>";
+                            <p>".$row2['status']."</p>";
+                            if($row2['status'] != 'USED')
+                            {
+                                echo "<button name = 'confirm' value = ".$row2['id'].">Confirm</button>";
+                            }
+                        echo"</form>";
                     }
                 endwhile;
+                if(isset($_POST['confirm']))
+                {
+                    $id = $_POST['confirm'];
+                    $sql = $con->prepare("UPDATE confirmed_services SET status = 'USED' WHERE id = '$id'");
+                    $sql->execute();
+
+                    if($sql->execute())
+                    {
+                        echo "<script>alert('Confirmed!');</script>";
+                        echo "<script>window.open('index.php', '_self');</script>";
+                    }
+                }
             }
         }
     }

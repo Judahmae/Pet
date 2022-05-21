@@ -282,7 +282,11 @@
                         </div>
                         
                         </div>
-                        Business Permit: <input type = 'file' name = 'proof_photo' placeholder = />
+                        <p class = 'miniHead'>Business Permit:</p> 
+                        <div class="drop-zone">
+                            <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                            <input type="file" name = 'proof_photo' class="drop-zone__input">
+                            </div>
                         
                        <br>
                         <button name = 'add_user' id = 'regs'>Register</button>
@@ -414,6 +418,7 @@
                 justify-content: center;
                 
             }
+
             .inner{
                 background: white;
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -553,5 +558,57 @@
   display: none;
 }
   
+
+
+
+.drop-zone {
+        width: 80%;
+height: 50px;
+padding: 6px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+font-family: "Quicksand", sans-serif;
+font-weight: 500;
+font-size: 14px;
+cursor: pointer;
+color: #777;
+border: 2px dashed #009578;
+border-radius: 10px;
+margin-left: 5%;
+        margin-bottom: 10px;
+}
+
+.drop-zone--over {
+border-style: solid;
+}
+
+.drop-zone__input {
+display: none;
+}
+
+.drop-zone__thumb {
+width: 100%;
+height: 100%;
+border-radius: 10px;
+overflow: hidden;
+background-color: #cccccc;
+background-size: cover;
+position: relative;
+}
+
+.drop-zone__thumb::after {
+content: attr(data-label);
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+padding: 5px 0;
+color: #ffffff;
+background: rgba(0, 0, 0, 0.75);
+font-size: 14px;
+text-align: center;
+}
     </style>
 </html>

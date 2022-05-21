@@ -1,161 +1,174 @@
-.manage_donation{
-    width: 100%;
-    
+.manage_donation {
+  width: 100%;
+}
+.tebs {
+  width: 100%;
+}
+.buttons {
+  float: right;
+  margin-right: 3%;
+}
+.body {
+  margin-top: 5vh;
+  background: #fff;
 
+  width: 95%;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
-.tebs{
-    width: 100%;
-}
-.buttons{
-    margin-top: 2%;
-    float: right;
-    margin-right: 3%;
-}
-.body{
-    margin-top: 7vh;
-    background: #fff;
-
-    width: 95%;
-    border-radius: 5px;
-    padding: 10px;
-    margin-left: 20px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-
-}
-p{
-    padding: 10px;
+p {
+  padding: 10px;
 }
 .selection {
-    background: #28287774;
+  background: #28287774;
 }
-.hed{
-    font-size: 22px;
-    font-weight: bold;
-    color: white;
-}
-
-#aksyon{
-    display: flex;
-    color: black;
-}
-.holdest{
-    height: 42px;
-}
-#views{
-    height: 30px;
-color: #777;
-font-weight: bold;
-border-radius: 3px;
-width: 100px;
-background: white;
-border: 1px solid #5a5bf3;
-margin-left: 5px;
-}
-#views2{
-    height: 30px;
-color: #fff;
-border-radius: 3px;
-width: 100px;
-background: #5a5bf3;
-border: none;
+.hed {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
 }
 
-.headLebs{
-    font-family: "Varela Round", sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    color: #777;
-    text-align: center;
+#aksyon {
+  display: flex;
+  color: black;
 }
-.dataLebs{
-    font-family: "Varela Round", sans-serif;
-    text-align: center;
+.holdest {
+  height: 42px;
 }
-.dataLebss{
-    font-family: "Varela Round", sans-serif;
-    text-align: left;
+#views {
+  height: 30px;
+  color: #777;
+  font-weight: bold;
+  border-radius: 3px;
+  width: 100px;
+  background: white;
+  border: 1px solid #5a5bf3;
+  margin-left: 5px;
+}
+#views2 {
+  height: 30px;
+  color: #fff;
+  border-radius: 3px;
+  width: 100px;
+  background: #5a5bf3;
+  border: none;
 }
 
-.mainGrid{
-           min-width: 480px;
-           width: 80%;
-           margin-left: 10%;
-           margin-top: 3%;
-           padding: 10px;
-           border-radius: 5px;
-           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.headLebs {
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #777;
+  text-align: center;
 }
-.headGrid{
-    border-bottom: 1px solid black;
-    display: grid;
-    grid-template-columns: 7% 37% 20% 15% 15%;
+.dataLebs {
+  font-family: "Varela Round", sans-serif;
+  text-align: center;
 }
-.dataGrid{
-    display: grid;
-    grid-template-columns: 7% 37% 20% 15% 15%;
-    margin-top: 1%;
-    padding: 10px;
-    background: #f4f4f4;
-    border-radius: 4px;
+.dataLebss {
+  font-family: "Varela Round", sans-serif;
+  text-align: left;
+}
 
+.mainGrid {
+  min-width: 480px;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 3%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.dataGrid:hover{
-    background: #ebebeb;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+.headGrid {
+  border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: 7% 37% 20% 15% 15%;
 }
-#btnExport{
-    padding: 5px;
-    background: #ffb7309f;
-    outline: none;
-    border: none;
-    color: black;
-    border-radius: 4px;
+.dataGrid {
+  display: grid;
+  grid-template-columns: 7% 37% 20% 15% 15%;
+  margin-top: 1%;
+  padding: 10px;
+  background: #f4f4f4;
+  border-radius: 4px;
 }
-#btnExport:hover{
-    background: #ffb730;
+.dataGrid:hover {
+  background: #ebebeb;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-.printPic{
-    width: 20px;
-    height: 20px;
-    
+#btnExport {
+  padding: 5px;
+  background: #ffb7309f;
+  outline: none;
+  border: none;
+  color: black;
+  border-radius: 4px;
 }
-#pdf{
-    padding: 5px;
-    outline: none;
-    border: none;
-    color: black;
-    border-radius: 4px;
-    background: #e33d1c83;
+#btnExport:hover {
+  background: #ffb730;
 }
-#pdf:hover{
-    background: #e33d1c;
+.printPic {
+  width: 20px;
+  height: 20px;
 }
-#csv{
-    padding: 5px;
-    outline: none;
-    border: none;
-    color: black;
-    border-radius: 4px;
-    background: #1ce37588;
+#pdf {
+  padding: 5px;
+  outline: none;
+  border: none;
+  color: black;
+  border-radius: 4px;
+  background: #e33d1c83;
 }
-#csv:hover{
-    background: #1ce375;
+#pdf:hover {
+  background: #e33d1c;
 }
-.total{
-    float: right;
-    margin-top: 30px;
-    display: flex;
-    padding: 10px;
-    border-radius: 5px;
-    background: white;
+#csv {
+  padding: 5px;
+  outline: none;
+  border: none;
+  color: black;
+  border-radius: 4px;
+  background: #1ce37588;
 }
-.figures{
-    font-family:  "Varela Round", sans-serif;
-    font-weight: bold;
-    font-size: 18px;
+#csv:hover {
+  background: #1ce375;
 }
-.det{
-    font-family:  "Varela Round", sans-serif;
-    margin-top: 5px;
-     font-size: 14px;
+.total {
+  float: right;
+  margin-top: 30px;
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+}
+.figures {
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+.det {
+  font-family: "Varela Round", sans-serif;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.searchBar {
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+.btnS {
+  border: none;
+  outline: none;
+  padding: 11px;
+  border-radius: 2px;
+  background: #ffb830;
+  margin-left: -8px;
+}
+.unity {
+  float: left;
+  margin-left: 3%;
 }

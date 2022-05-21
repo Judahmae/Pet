@@ -73,6 +73,8 @@
             <p>Contact Number</p>
 
             <p>Date Confirmed</p>
+
+            <p>Coupon Code</p>
             <div></div>
         </div>
         <tr>
@@ -106,7 +108,7 @@
     .okss{
         padding: 10px;
         font-family: "Varela Round", sans-serif;
-        width: 10%;
+        width: 15%;
         border: none;
         border-radius: 2px;
         outline: none;
@@ -114,9 +116,11 @@
     }
     #search_btn{
         border: none;
-        padding: 10px;
-        margin-left: -5px;
-        border-radius: 2px;
+  outline: none;
+  padding: 11px;
+  border-radius: 2px;
+  background: #ffb830;
+  margin-left: -8px;
     }
     .searchs{
         display: flex;

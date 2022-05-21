@@ -34,6 +34,8 @@
             <p class = 'he' >NAME</p>
             <p class = 'he' >TIME</p>
             <p class = 'he' >COUPON CODE</p>
+            <p class = 'he'> STATUS</p>
+            <p class = 'he' >ACTION</p>
         </div>
         <div>
             <?php
@@ -62,7 +64,7 @@
         }
         .hed{
             display: grid;
-            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-columns: 16% 16% 16% 16% 16% 16%;
         }
         P{
             padding: 10px;

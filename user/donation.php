@@ -76,7 +76,7 @@
                 </div>
                 <div class="righter">
                     <p class = 'rightist' >Become one of our Petcenters? :></p>
-                    <p class = 'smaller2' >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias maxime fugiat sapiente eum vel. Quaerat officia libero magnam et enim similique ea reiciendis, hic sint, numquam modi ipsam fugit possimus.</p>
+                    <p class = 'smaller2' >By applying so, you can enjoy many benefits from us. To name a few, you can broaden your scope since this is an online platform, and encourage many people to book appointments or make reservations online with just a click of your fingertip. Most importantly, it will boost your business. You can also help many pet organizations by encouraging people to donate thru coupons and discounts! What are you waiting for? Be part of the family, be part of Pet Society!</p>
                 </div>
             </div>
             </a>

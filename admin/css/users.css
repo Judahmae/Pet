@@ -1,100 +1,99 @@
-
-    p{
-        padding: 10px;
-    }
-    .selection {
+p {
+  padding: 10px;
+}
+.selection {
   background: #28287774;
 }
-.hed{
-        font-size: 22px;
-        font-weight: bold;
-        color: white;
-    }
-    .hedGrid{
-        display: grid;
-        grid-template-columns:  8% 20% 8% 14% 14% 20% 10%;
-        text-align: center;
-        font-weight: bold;
-        border-bottom: 1px solid black;
-    }
-    .body{
-        margin-top: 7vh;
-        background: #fff;
-        width: 120%;
-        border-radius: 5px;
-        padding: 10px;
-        margin-left: 20px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-
-    }
-    .lebs{
-        font-family: "Varela Round", sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    color: #777;
-    text-align: center;
-    }
-    .innerGrid{
-        display: grid;
-        grid-template-columns:8% 20% 8% 14% 14% 20% 10%;
-        margin-top: 1%;
-    padding: 10px;
-    background: #f4f4f4;
-    border-radius: 4px;
-    }
-    .innerGrid:hover{
-        background: #ebebeb;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    }
-    .dbtn{
-        text-decoration: none;
-        font-family: "Varela Round", sans-serif;
-        padding: 10px;
-        border: 1px solid blue;
-        height: 22px;
-        border-radius: 4px;
-        width: 45%;
-        text-align: center;
-    }
-    .dbtn:hover{
-        background: blue;
-        color: white;
-    }
-    .okss{
-        text-align: center;
-        font-family: "Varela Round", sans-serif;
-    }
-    .imgg{
-        width: 70%;
-        margin-left: 15%;
-    }
-    .btn1{
-       padding: 10px;
-       height: 25px;
-    color: #fff;
-    border-radius: 3px;
-    width: 40%;
-    background: rgba(100, 100, 100, 0.39);
-    text-decoration: none;
-    margin-left: 5%;
-    text-align: center;
-
-    }
-    .btn1:hover{
-        background: rgba(100, 100, 100, 0.692);
-    }
-    .editP{
-        height: 20px;
-        width: 20px;;
-    }
-    .btn2{
-        padding: 10px;
-        height: 25px;
-     color: #fff;
-     border-radius: 3px;
-     width: 40%;
-     background: rgba(100, 100, 100, 0.39);
-     text-decoration: none;
-     margin-left: 5%;
-     text-align: center;
-    }
+.hed {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+.hedGrid {
+  display: grid;
+  grid-template-columns: 8% 20% 8% 14% 14% 20% 10%;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+.body {
+  margin-top: 7vh;
+  margin-bottom: 3vh;
+  background: #fff;
+  width: 120%;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.lebs {
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+}
+.innerGrid {
+  display: grid;
+  grid-template-columns: 8% 20% 8% 14% 14% 20% 10%;
+  margin-top: 1%;
+  padding: 10px;
+  background: #f4f4f4;
+  border-radius: 4px;
+}
+.innerGrid:hover {
+  background: #ebebeb;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.dbtn {
+  text-decoration: none;
+  font-family: "Varela Round", sans-serif;
+  padding: 10px;
+  border: 1px solid blue;
+  height: 22px;
+  border-radius: 4px;
+  width: 45%;
+  text-align: center;
+}
+.dbtn:hover {
+  background: blue;
+  color: white;
+}
+.okss {
+  text-align: center;
+  font-family: "Varela Round", sans-serif;
+}
+.imgg {
+  width: 70%;
+  margin-left: 15%;
+}
+.btn1 {
+  padding: 10px;
+  height: 25px;
+  color: #fff;
+  border-radius: 3px;
+  width: 40%;
+  background: rgba(100, 100, 100, 0.39);
+  text-decoration: none;
+  margin-left: 5%;
+  text-align: center;
+}
+.btn1:hover {
+  background: rgba(100, 100, 100, 0.692);
+}
+.editP {
+  height: 20px;
+  width: 20px;
+}
+.btn2 {
+  padding: 10px;
+  height: 25px;
+  color: #fff;
+  border-radius: 3px;
+  width: 40%;
+  background: rgba(100, 100, 100, 0.39);
+  text-decoration: none;
+  margin-left: 5%;
+  text-align: center;
+}

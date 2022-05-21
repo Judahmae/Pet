@@ -15,7 +15,6 @@
                     if(isset($_SESSION['user_id']))
                     {
                         echo "<li> <a href = '/Pet/user/add_pet.php'>Pet Profile</a></li>";
-                        echo "<li> <a href = '/Pet/user/ledger.php'>Ledger</a></li>";
                     }
                 ?>
             </ul>

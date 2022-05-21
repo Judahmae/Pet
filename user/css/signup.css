@@ -5,7 +5,6 @@ body {
   justify-content: center;
 }
 .mainContainer {
-  height: 80vh;
   width: 70vw;
   margin-top: 5vh;
   background: rgb(255, 255, 255);
@@ -16,12 +15,10 @@ body {
   font-family: "Varela Round", sans-serif;
   font-size: 20px;
   width: 85%;
- 
 }
 .insideDiv {
   padding: 10px 0px 10px 10px;
   display: flex;
-  height: 100%;
 }
 .rightSide {
   width: 60%;
@@ -78,29 +75,34 @@ body {
   width: 50%;
   margin-left: 30%;
 }
-.imgCont{
+.imgCont {
   height: 30%;
   margin-top: 20%;
   padding-top: 20%;
-  background: rgb(75,166,255);
-background: radial-gradient(circle, rgba(75,166,255,0.4374124649859944) 0%, rgba(255,255,255,1) 50%);
+  background: rgb(75, 166, 255);
+  background: radial-gradient(
+    circle,
+    rgba(75, 166, 255, 0.4374124649859944) 0%,
+    rgba(255, 255, 255, 1) 50%
+  );
   padding-bottom: 20%;
 }
-.oneS{
+.oneS {
   font-weight: bold;
+  font-family: "Varela Round", sans-serif;
   font-size: 28px;
   text-align: right;
   margin-right: 30px;
   margin-top: 20%;
   color: #333;
 }
-.welss{
+.welss {
   font-weight: bold;
   font-size: 20px;
   float: right;
   margin-right: 30px;
   color: #4e8cca;
-
+  font-family: "Varela Round", sans-serif;
 }
 #sngup {
   width: 90%;
@@ -123,18 +125,16 @@ background: radial-gradient(circle, rgba(75,166,255,0.4374124649859944) 0%, rgba
   height: 30px;
   width: 30px;
 }
-@media(max-width: 800px){
-  .leftSide{
-      display: none;
+@media (max-width: 800px) {
+  .leftSide {
+    display: none;
   }
-  .rightSide{
+  .rightSide {
     width: 100vw;
     margin-left: 5%;
   }
-  .mainContainer{
+  .mainContainer {
     width: 100vw;
-    height: 1000vh;
     margin-top: 0;
   }
 }
-
