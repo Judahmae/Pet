@@ -29,12 +29,12 @@
                 <li><a href="manage_partner.php">Manage Partners</a></li>
                 <li><a href="ledger.php">Ledger</a></li>
             </ul>
-        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Products</a></li>
+        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Sales Inventory</a></li>
         <li><a href = "/Pet/admin/add_products.php"><img src="../uploads/box.svg" class="navicons">Add Product</a></li>
         <li><a href = "/Pet/admin/deliveries.php"><img src="../uploads/deliver.svg" class="navicons">Deliveries(<?php echo count_deliveries();?>)</a></li>
         <li  class = 'selection'><a href = "/Pet/admin/viewall_orders.php"><img src="../uploads/deliver.svg" class="navicons">Orders(<?php echo count_orders();?>)</a></li>
         <li><a href= "/Pet/admin/users.php"><img src="../uploads/user.svg" class="navicons">Users</a></li> 
-        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Sales Inventory</a></li>
+        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Generate Report</a></li>
         <li><a href= "/Pet/admin/petcenterApplication.php"><img src="../uploads/deliver.svg" class="navicons">Pet Center Application</a></li>
         </ul>
 </div>
@@ -46,6 +46,7 @@
         </div>
 </div>
 <div id="bodyright">
+    <p class = 'hed'>Cutomer's Information</p>
 <div class = 'body'>
 <?php
 
@@ -60,14 +61,30 @@ if(isset($_GET['user']))
     $row = $sql->fetch();
 
     echo
-    "<div class = 'conts'>
-    <p>Name</p><p>".$row['user_username']."</p>
+    "
+    <div class = 'mainConts'>
+    <div class = 'contsImages'>
+  <img src = '../uploads/user_profile/".$row['user_profilephoto']."'/>
     </div>
+    <div class = 'right'>
     <div class = 'conts'>
-    <p>Location: ".$row['user_address']."</p>
+    <p class = 'lebs'>Name</p><p class = 'data'>".$row['user_username']."</p>
     </div>
-    <p>Email: ".$row['user_email']."</p>
-    <p>Contact Number: ".$row['user_contactnumber']."</p>";
+    <br>
+    <div class = 'conts'>
+    <p class = 'lebs'>Location</p><p class = 'data'> ".$row['user_address']."</p>
+    </div>
+    <br>
+    <div class = 'conts'>
+    <p class = 'lebs'>Email</p><p class = 'data'>".$row['user_email']."</p>
+    </div>
+    <br>
+    <div class = 'conts'>
+    <p class = 'lebs'>Contact Number</p><p class = 'data'> ".$row['user_contactnumber']."</p>
+    </div>
+    </div>
+    </div>
+    ";
 }
 ?>
 </body>
@@ -81,6 +98,10 @@ if(isset($_GET['user']))
 
 </body>
 <style>
+    .mainConts{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
     .body{
         margin-top: 7vh;
   margin-bottom: 3vh;
@@ -93,10 +114,36 @@ if(isset($_GET['user']))
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     }
     .conts{
-        background: red;
-        width: 30%;
+        border: .5px solid #999;
+        width: 90%;
         padding: 10px;
         border-radius: 4px;
     }
+    .contsImages{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .data{
+        font-family: "Varela Round", sans-serif;
+        padding: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #777;
+    }
+    .lebs{
+        font-family: "Varela Round", sans-serif;
+        font-size: 12px;
+        color: #777;
+        margin-bottom: 5px;
+    }
+    .hed{
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        padding: 10px;
+    }
+     .right{
+         margin-top: 2vh;
+     }
 </style>
 </html>

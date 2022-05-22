@@ -1,6 +1,32 @@
-<div class = "scroll" id ="bodyright">
-    <h3>Services History</h3>
+<html>
+    <head>
+    <title>Pet Society</title>
+        <link rel = "stylesheet" href="css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Fredoka+One&family=Open+Sans:wght@500&family=Palette+Mosaic&family=Rubik:wght@500&family=Varela+Round&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <?php 
+            include ("inc/db.php");
+            include ("inc/function.php");
+            include ("inc/header.php"); 
+            ?>
+
+<div class = "ko">
+                <div class="inners">
+                    <a class = 'lengk' href = 'index.php'>My services</a>
+                    <a class = 'lengk' href = 'addService.php'>Add services</a>
+                    <a class = 'lengk' href = 'confirmRequests.php'>Requests(<?php echo count_requests();?>)</a>
+                </div>
+                    <div id = 'bodyleft'>
+                      <br><br>
+                    <div class = "scroll" >
+    <p class = '' >Services History</p>
     <div class = "body">
+    <input type = "button" id = "btnExport" value = "PRINT" />
+        <button id = "pdf">Export to PDF</button>
+        <button id = "csv">Export to EXCEL</button>
     <form method = "POST" enctype = "multipart/form-data">
     <table id = "table" cellspacing ="0" cellpadding ="0">
         <thead>
@@ -13,16 +39,14 @@
         <tbody>
             <tr>
                 <?php 
-                    include("inc/function.php");
                     echo viewHistory();
                 ?>
             </tr>
         </tbody>
     </form>
-        <input type = "button" id = "btnExport" value = "PRINT" />
-        <button id = "pdf">Export to PDF</button>
-        <button id = "csv">Export to EXCEL</button>
+       
     </div>
+    <br>
 
     <script src="src/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -59,4 +83,38 @@
         });
     </script>
 </div>
+
+
+               
+                    </div>   
+
+    </body>
+    <style>
+        #table{
+            width: 100%;
+            border: 1px solid black;
+            
+        }
+        .body{
+            width: 100%;
+            margin-bottom: 10px;
+            padding-bottom: 10vh;
+        }
+        th{
+            padding: 10px;
+        }
+        td{
+            text-align: center;
+            padding: 5px;
+            border: .5px solid black;
+            margin-bottom: 5px;
+        }
+        thead{
+            background: #2bd4a2;
+        }
+        tbody{
+            background: #e3f9f2;
+        }
+    </style>
+</html>
 

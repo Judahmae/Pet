@@ -34,18 +34,18 @@
         <h3>Grooming Services</h3>
               <div class = 'fDogs'>
                    <?php featured_service_grooming(); ?>
-                   </div>
         </div>
+  
         <h3>Hotel Services</h3>
               <div class = 'fDogs'>
                    <?php featured_service_hotel(); ?>
                    </div>
-        </div>
+            </div>
         <h3>Pet Training</h3>
               <div class = 'fDogs'>
                    <?php featured_service_training(); ?>
-                   </div>
-        </div>
+             </div>
+   
         <h3>Vet Clinic</h3>
               <div class = 'fDogs'>
                    <?php featured_service_vet_clinic(); ?>
@@ -98,5 +98,21 @@
     margin-top: 30px;
     font-family: 'Varela Round', sans-serif;
     }
+    .icons{
+        font-size: 10px;
+        color: #777;
+        margin-top: 7px;
+       
+    }
+    .couponBand{
+        width: 30px;
+        height: 30px;
+        float: right;
+    }
+    .band{
+        display: flex;
+        margin-bottom: 7px;
+    }
+
     </style>
 </html>

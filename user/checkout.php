@@ -78,7 +78,7 @@
             </div>
             <div class = 'group'>
             <p class = 'tag'>Municipality </p>
-            <input type = 'text' class = 'inputed' name = 'user_address' value = ".$row_user['municipality']." disabled/>
+            <input type = 'text' class = 'inputed' name = 'user_address' value = '".$row_user['municipality']."' disabled/>
             </div>
             </div>
             </div>
@@ -109,6 +109,7 @@
                     <input class = 'useless' style = 'display:none;' type = 'hidden' name = 'pro_id' value = ".$row['pro_id']." />
                     <p class = 'tag'>Product Name: <p/>
                     <input class = 'inputeder' type = 'text' name = 'pro_id' value = '".$row['pro_name']."' disabled/>
+                    
                     </div>
                     <div class = 'groups'>
                     <p class = 'tag'>Qty: </p>
@@ -116,22 +117,7 @@
                     </div>
                 </div>
                 ";
-                if($row_user['municipality'] == "Mandaue City")
-                {  
-                    $net_total = $net_total + $sub_total + 10;
-                }
-                elseif($row_user['municipality'] == "Cebu City")
-                {
-                    $net_total = $net_total + $sub_total + 12;
-                }
-                elseif($row_user['municipality'] == "Consolacion")
-                {
-                    $net_total = $net_total + $sub_total + 12;
-                }
-                elseif($row_user['municipality'] == "Lapu-Lapu City")
-                {
-                    $net_total = $net_total + $sub_total + 15;
-                }
+                $net_total = $net_total + $sub_total;
                
         endwhile;
                 if($row_user['municipality'] == "Mandaue City")
@@ -179,29 +165,32 @@
                 <p class = 'tag'>Total Amount:</p>";
                 if($row_user['municipality'] == "Mandaue City")
                 {
-                    $net_total = $net_total-10;
+                    $net_total+=10;
                     echo  "
                     <input class = 'inputed' type = 'text' value = ' P".$net_total."' disabled/>";
+                echo "</div>";
                 }
                 if($row_user['municipality'] == "Cebu City")
                 {
-                    $net_total = $net_total-12;
+                    $net_total+=12;
                     echo  "
                     <input class = 'inputed' type = 'text' value = ' P".$net_total."' disabled/>";
-                }
-                if($row_user['municipality'] == "Consolacion")
-                {
-                    $net_total = $net_total-12;
-                    echo  "
-                    <input class = 'inputed' type = 'text' value = ' P".$net_total."' disabled/>";
+                echo "</div>";
                 }
                 if($row_user['municipality'] == "Lapu-Lapu City")
                 {
-                    $net_total = $net_total-17;
+                    $net_total+=13;
                     echo  "
                     <input class = 'inputed' type = 'text' value = ' P".$net_total."' disabled/>";
-                }
                 echo "</div>";
+                }
+                if($row_user['municipality'] == "Consolacion")
+                {
+                    $net_total+=12;
+                    echo  "
+                    <input class = 'inputed' type = 'text' value = ' P".$net_total."' disabled/>";
+                echo "</div>";
+                }
                 echo"
             </div>
             </div>

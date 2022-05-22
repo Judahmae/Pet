@@ -23,9 +23,12 @@
             <a class = 'contDivSel' href = "service_clinic.php" style = "text-decoration: none;color:#000;"><img class = "image" src="../uploads/clinic.png" alt="">Vet Clinic</a>
             <a class = 'servDiv' href = "service_other.php" style = "text-decoration: none;color:#000;"><img class = "image" src="../uploads/otherService.png" alt="">others</a>
         </div>
-              <ul>
+        <div class = 'hed' ><img src = '../uploads/bird.gif' id = 'imgTop'><p class = 'ttlHead' >twit</p>
+        </div><br>
+                <h3>Pet Vet Clinics</h3>
+              <div class = 'fdogs'>
                    <?php vet_clinics(); ?>
-                   </ul>
+                   </div>
           </div>
             <?php
             include ("inc/bodyright.php"); 

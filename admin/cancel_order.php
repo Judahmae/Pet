@@ -18,37 +18,23 @@
 
         $row_user = $view_user->fetch();
         $receiver = $row_user['user_email'];
+        $subject = "Order Cancelled";
+        $body = "We are sorry for the inconvenience, but we can't process your order. ";
+        $sender = "ianjohn0101@gmail.com";
 
-        echo 
-        "<form method = 'POST' enctype = 'multipart/form-data'>
-            <div class = 'box'>
-                <input type = 'hidden' name = 'receiver' value = ".$receiver." />
-                <label>Reason for Canceling: </label>
-                <input type = 'text' name = 'reason' placeholder = 'Start with saying Sorry for the inconvenience..' style = 'height: 50px;width:500px;'/>
-            </div>
-            <button name = 'submit'>Submit</button>
-        </form>";
-
-        if(isset($_POST['submit']))
+        if(mail($receiver, $subject, $body, $sender))
         {
-            $receiver = $_POST['receiver'];
-            $subject = "Order Cancelled";
-            $body = $_POST['reason'];
-            $sender = "ianjohn0101@gmail.com";
+            $delete_order = $con->prepare("DELETE FROM orders_tbl WHERE order_id = '$order_id'");
+            $delete_order->setFetchMode(PDO:: FETCH_ASSOC);
+            $delete_order->execute();
 
-            if(mail($receiver, $subject, $body, $sender))
+            if($delete_order->execute())
             {
-                $delete_order = $con->prepare("DELETE FROM orders_tbl WHERE order_id = '$order_id'");
-                $delete_order->setFetchMode(PDO:: FETCH_ASSOC);
-                $delete_order->execute();
-
-                if($delete_order->execute())
-                {
-                    echo "<script>alert('Item Cancelled Successfully');</script>";
-                    echo "<script>window.open('index.php?viewall_orders.php','_self');</script>";
-                }
+                echo "<script>alert('Item Cancelled Successfully');</script>";
+                echo "<script>window.open('viewall_orders.php','_self');</script>";
             }
         }
+        
     }
 ?>
 

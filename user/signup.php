@@ -275,7 +275,7 @@
                         <input type="text" class = "inputs"  name = "st" autocomplete = "new-password" required>
                     </div>
                     <div class="fieldCont">
-                        <p class = "label">Full Address :</p>
+                        <p class = "label">Landmark :</p>
                         <input type="text" class = "inputs"  name = "user_address" autocomplete = "new-password" required>
                     </div>
                     <div class="fieldCont">
@@ -343,65 +343,85 @@ include("inc/db.php");
 
             $row2 = $view_name->fetch();
 
-            if($row['all_emails']>0)
+            if($row['all_emails'] == 0)
             {
-                echo "<script>alert('Email Exists');</script>";
-            }
-            elseif($row2['all_usernames']>0)
-            {
-                echo "<script>alert('Name Exists');</script>";
-            }
-            elseif(!is_numeric($user_contactnumber))
-            {
-                echo "<script>alert('Only Digits Allowed!');</script>";
-            }
-            elseif(strlen($user_contactnumber)>=12)
-            {
-                echo "<script>alert('Number must at least 11 digits!');</script>";
-            }
-            elseif(strlen($user_password) >= 9 &&
-            preg_match('/[A-Z]/', $user_password) > 0 &&
-            preg_match('/[a-z]/', $user_password) > 0)
-            {
-                echo "<script>alert('Password must at least 8 characters in length!');</script>";
-            }
-            elseif($conf_password != $user_password)
-            {
-                echo "<script>alert('Password must match!!');</script>";
-            }
-            else
-            {
-                $add_user = $con->prepare("INSERT INTO users_table 
-                SET
-                user_username = '$user_username',
-                user_password = '$user_password',
-                user_contactnumber = '$user_contactnumber',
-                user_address =  '$user_address',
-                st = '$st',
-                municipality = '$municipality',
-                barangay = '$barangay',
-                user_email = '$user_email',
-                v_key = '$verification_key',
-                verified = $verified,
-                user_profilephoto = '$user_profilephoto'
-                ");
-    
-                if($add_user->execute())
+                if($row2['all_usernames'] == 0)
                 {
-                    echo "<script>alert('Registration Successfull!');</script>"; 
-                    echo "<script>
-                    if ( window.history.replaceState ) {
-                       window.history.replaceState( null, null, window.location.href );
-                   }            
-                    </script>";
-                    echo "<script>window.open('login.php', '_self');</script>";
+                    if(is_numeric($user_contactnumber))
+                    {
+                        if(strlen($user_contactnumber)<12)
+                        {
+                            if(strlen($user_password)<=9 && strlen($user_password)>=3)
+                            {
+                                if($user_password == $conf_password)
+                                {
+                                    if(preg_match('/[A-Z]/', $user_password) != 0 &&
+                                    preg_match('/[a-z]/', $user_password) != 0)
+                                    {
+                                        $add_user = $con->prepare("INSERT INTO users_table 
+                                        SET
+                                        user_username = '$user_username',
+                                        user_password = '$user_password',
+                                        user_contactnumber = '$user_contactnumber',
+                                        user_address =  '$user_address',
+                                        st = '$st',
+                                        municipality = '$municipality',
+                                        barangay = '$barangay',
+                                        user_email = '$user_email',
+                                        v_key = '$verification_key',
+                                        verified = $verified,
+                                        user_profilephoto = '$user_profilephoto'
+                                        ");
+                            
+                                        if($add_user->execute())
+                                        {
+                                            echo "<script>alert('Registration Successfull!');</script>"; 
+                                            echo "<script>
+                                            if ( window.history.replaceState ) {
+                                            window.history.replaceState( null, null, window.location.href );
+                                        }            
+                                            </script>";
+                                            echo "<script>window.open('login.php', '_self');</script>";
+                                        }
+                                        else
+                                        {
+                                            echo "<script>alert('Registration Unsuccessfull!');</script>";
+                                        }
+                                    }
+                                    else
+                                    {
+                                        echo "<script>alert('Password must have at least 1 uppercase, 1 special character');</script>";
+                                    }
+                                }
+                                else
+                                {
+                                    echo "<script>alert('Password must match');</script>";
+                                }
+                            }
+                            else
+                            {
+                                echo "<script>alert('Password must at least 8 characters');</script>";
+                            }
+                        }
+                        else
+                        {
+                            echo "<script>alert('Contact Number must at least 11 characters');</script>";
+                        }
+                    }
+                    else
+                    {
+                        echo "<script>alert('Contact Number Invalid!');</script>";
+                    }
                 }
                 else
                 {
-                    echo "<script>alert('Registration Unsuccessfull!');</script>";
+                    echo "<script>alert('Username Existed!');</script>";
                 }
             }
-           
+            else
+            {
+                echo "<script>alert('Email Existed!');</script>";
+            }
         }
 
         function generateRandomString($length = 8) {

@@ -426,7 +426,7 @@ body {
   background: #f4f7fa;
   float: left;
   width: 100%;
-  height: 370px;
+  height: 380px;
   border: 1px solid #e9e9e9;
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 16%);
 }
@@ -481,7 +481,7 @@ body {
 .prodDet {
   width: 80%;
   margin-left: 10%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .prays {
   margin-bottom: 15px;
@@ -822,4 +822,33 @@ h4 {
 .asd {
   display: flex;
   width: 100%;
+}
+
+.icons {
+  font-size: 10px;
+  color: #777;
+  margin-top: 7px;
+}
+.couponBand {
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+.band {
+  display: flex;
+  margin-bottom: 7px;
+}
+.couponBand {
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+.band {
+  display: flex;
+  margin-bottom: 7px;
+}
+.icons {
+  font-size: 10px;
+  color: #777;
+  margin-top: 7px;
 }

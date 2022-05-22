@@ -25,7 +25,7 @@
     <style>
         .dets{
             display: grid;
-            grid-template-columns: 40% 60%;
+            grid-template-columns: 20% 60%;
             width: 70%;
             padding: 10px;
             border-radius: 5px;
@@ -40,10 +40,9 @@
   
         }
         .lebes{
-            font-weight: bold;
-            font-size: 20px;
+            font-size: 14px;
             color: #888;
-            text-align: right;
+            text-align: left;
         }
         .prodName{
             font-weight: bold;
@@ -63,7 +62,7 @@
         }
         .datea{
             color: #555;
-            font-family:  Geneva;
+            font-family: "Varela Round", sans-serif;
             font-size: 18px;
         }
         .cons{
@@ -97,9 +96,9 @@
   text-decoration: none;
   border-radius: 5px;
   font-size: 12px;
-  border: 1px solid #0080fe;
+  border: 1px solid #ffb830;
   color: blue;
-  background: #0080fe;
+  background: #ffb830;
 }
     </style>
     <script>

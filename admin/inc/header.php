@@ -36,4 +36,10 @@
 
     
 </div>
-
+<script>
+        var month = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+        var today = new Date();
+        var date = today.getFullYear()+'-'+month[(today.getMonth())]+'-'+today.getDate();
+        var date2 = month[(today.getMonth())]+' '+today.getDate()+' '+today.getFullYear();
+        document.getElementById("currentDate").innerHTML = date2;
+    </script>

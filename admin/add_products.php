@@ -30,13 +30,12 @@
                 <li><a href="manage_partner.php">Manage Partners</a></li>
                 <li><a href="ledger.php">Ledger</a></li>
             </ul>
-        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Products</a></li>
+        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Sales Inventory</a></li>
         <li class = 'selection' ><a href = "/Pet/admin/add_products.php"><img src="../uploads/box.svg" class="navicons">Add Product</a></li>
         <li><a href = "/Pet/admin/deliveries.php"><img src="../uploads/deliver.svg" class="navicons">Deliveries(<?php echo count_deliveries();?>)</a></li>
         <li><a href = "/Pet/admin/viewall_orders.php"><img src="../uploads/deliver.svg" class="navicons">Orders(<?php echo count_orders();?>)</a></li>
-        <li><a href= "/Pet/admin/viewall_coupons.php"><img src="../uploads/coupon.svg" class="navicons">Coupons</a></li> 
         <li><a href= "/Pet/admin/users.php"><img src="../uploads/user.svg" class="navicons">Users</a></li> 
-        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Sales Inventory</a></li>
+        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Generate Report</a></li>
         <li><a href= "/Pet/admin/petcenterApplication.php"><img src="../uploads/deliver.svg" class="navicons">Pet Center Application</a></li>
         </ul>
 </div>
@@ -85,21 +84,6 @@
                     <input type="file" name = 'pro_img' class="drop-zone__input">
                     </div>
                 </div>
-                <div class = 'inputHolder'>
-                <div class="drop-zone">
-                    <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                    <input type="file" name = 'pro_img2' class="drop-zone__input">
-                    </div>
-                </div>
-                    
-   
-
-                <div class = 'inputHolder'>
-                <div class="drop-zone">
-                    <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                    <input type="file" name = 'pro_img3' class="drop-zone__input">
-                    </div>
-                </div>
                 
                 <div class = 'inputHolder'>
                     <p  id = 'lebelss'>Price: </p>
@@ -118,7 +102,9 @@
          
                 
             </div>
+            <div class = 'btsn'>
             <button class= 'add' name = 'add_prod'>Add Product</button>
+            </div>
           
         </form>
         <?php add_product(); ?>
@@ -160,18 +146,18 @@
     }
     .add{
         height: 52px;
-        width: 90%;
-        margin-left: 5%;
-        padding: 5px;
+        float: right;
+        margin-right: 5%;
+        padding: 10px;
         border: none;
         outline: none;
         color: white;
-        background: #28287774;
+        background: #ffb830;
         border-radius: 5px;
+        width: 10%;
+
     }
-    .add:hover{
-        background: #5a5bf3;
-    }
+    
     .hed{
         font-size: 22px;
         font-weight: bold;
@@ -198,7 +184,10 @@
 
     }
 
-
+    .btsn{
+      height: 40px;
+      margin-bottom: 3vh;
+    }
 
 
     .drop-zone {

@@ -14,7 +14,23 @@
                 <?php
                     if(isset($_SESSION['user_id']))
                     {
-                        echo "<li> <a href = '/Pet/user/add_pet.php'>Pet Profile</a></li>";
+                        $user_id = $_SESSION['user_id'];
+                        $sql = $con->prepare("SELECT * FROM pets WHERE user_id = '$user_id'");
+                        $sql->setFetchMode(PDO::FETCH_ASSOC);
+                        $sql->execute();
+
+                        $row = $sql->fetch();
+
+                        if($row != 0)
+                        {
+                            echo "<li> <a href = '/Pet/user/myPet.php'>My Pet</a></li>";
+                        }
+                        else
+                        {
+                            
+                            echo "<li> <a href = '/Pet/user/add_pet.php'>Pet Profile</a></li>";
+                            
+                        }
                     }
                 ?>
             </ul>

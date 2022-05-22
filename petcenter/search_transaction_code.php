@@ -22,8 +22,10 @@
         </div>
             <div id = 'bodyleft'>
             <form method = "get" action = "search_transaction_code.php" enctype="multipart/form-data">
-                <input type="text" name = 'user_query' placeholder = "Search here..">
-                <button id = "search_btn" name = "search"><img src = "../uploads/search.svg" class = "searchIcon"></button>
+            <div class = 'searchB'>
+                <input class = 'txtS' type="text" name = 'user_query' placeholder = "Search here..">
+                <button class = "serch" name = "search"><img src = "../uploads/search.svg" class = "searchIcon"></button>
+            </div>
             </form>
                 <div class="maine">
                 <p class = 'ttl'>Requests</p>
@@ -65,13 +67,25 @@
         .hed{
             display: grid;
             grid-template-columns: 16% 16% 16% 16% 16% 16%;
+            border-bottom: 1px solid black;
+        }
+        .hedBelow{
+            display: grid;
+            grid-template-columns: 16% 16% 16% 16% 16% 16%;
+            margin-top: 1%;
+            padding: 10px;
+            background: #f4f4f4;
+            border-radius: 4px;
         }
         P{
             padding: 10px;
         }
         .he{
-            font-size: 18px;
-            background: #efefef;
+            font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #777;
+  text-align: center;
         }
         .oks{
             text-align: center;
@@ -86,6 +100,26 @@
             font-size: 20px;
             margin-bottom: 5px;
             color: #5a5bf3;
+        }
+        .searchB{
+            display: flex;
+            margin-top: 5vh;
+            height: 40px;
+           
+
+        }
+        .serch{
+            height: 100%;
+            padding: 10px;
+            margin-left: 5px;
+            border: 1px solid #5a5bf3;
+            outline: none;
+            border-radius: 4px;
+            
+        }
+        .txtS{
+            padding-left: 10px;
+            width: 30%;
         }
     </style>
 </html>

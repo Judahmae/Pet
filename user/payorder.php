@@ -22,11 +22,11 @@ $sql = $con->query("SELECT MAX(order_id) FROM orders_tbl");
 $sql->setFetchMode(PDO:: FETCH_ASSOC);
 
 $row = $sql->fetch();
-$order_id = 1;
-if($row)
-{
-    $order_id = intval($row['MAX(order_id)']+1); 
-}
+$order_id = rand(10000000, 99999999);
+// if($row)
+// {
+//     $order_id = intval($row['MAX(order_id)']+1); 
+// }
 
 date_default_timezone_set('Singapore');
 $date = date('m/d/Y h:i:s a', time());

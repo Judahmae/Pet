@@ -36,14 +36,36 @@
         echo
         "
         <div class = 'bodys' >
-        <p class = 'haha'>Pet: ".$row['pet']."</p>
-        <p class = 'haha'>Pet Name: ".$row['pet_name']."</p>
-        <p class = 'haha'>Pet Age: ".$row['pet_age']."</p>
-        <p class = 'haha'>Pet Breed: ".$row['pet_breed']."</p>
-        <p class = 'haha'>Pet Gender: ".$row['pet_gender']."</p>
-        <p class = 'haha'>Pet Details: ".$row['pet_details']."</p>
-        <p class = 'haha'>Vaccination Status: ".$row['vaccination_status']."</p>
-        <p class = 'haha'>Pet Photo: ".$row['pet_photo']."</p>
+        <img class = 'imagePet' src = '../uploads/pets/".$row['pet_photo']."'/>
+        <div class = 'conts'>
+        <p class = 'haha'>Pet</p>
+        <p class = 'data'> ".$row['pet']."</p>
+        </div>
+        <div class = 'conts'>
+        <p class = 'haha'>Pet Name</p>
+        <p class = 'data'> ".$row['pet_name']."</p>
+        </div>
+        <div class = 'conts'>
+        <p class = 'haha'>Pet Age</p>
+        <p class = 'data'> ".$row['pet_age']."</p>
+        </div>
+        <div class = 'conts'>
+        <p class = 'haha'>Pet Breed</p>
+        <p class = 'data'>".$row['pet_breed']."</p>
+        </div>
+        <div class = 'conts'>
+        <p class = 'haha'>Pet Gender</p>
+        <p class = 'data'>".$row['pet_gender']."</p>
+        </div>
+        <div class = 'conts'>
+        <p class = 'haha'>Pet Details</p>
+        <p class = 'data'>".$row['pet_details']."</p>
+        </div>
+        <div class = 'conts'>
+        <p class = 'haha'>Vaccination Status</p>
+        <p class = 'data'>".$row['vaccination_status']."</p>
+        </div>
+      
         </div>";
 
     }
@@ -57,10 +79,19 @@
   
     </body>
     <style>
+        .imagePet{
+            width: 80%;
+            margin-left: 10%;
+        }
           .maine{
             margin-top: 3%;
             
            
+        }
+        .conts{
+            border: 1px solid black;
+            margin-bottom: 2vh;
+            border-radius: 4px;
         }
         .bodys{
             width: 90%;
@@ -69,6 +100,9 @@
             margin-bottom: 20px;
             border-radius: 5px;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        .data{
+            padding: 10px;
         }
         .oks{
             text-align: center;
@@ -79,6 +113,7 @@
             background:#5a5bf3;
             color: white;
             text-decoration: none;
+            margin-bottom: 3vh;
 
         }
         #porm{
@@ -96,7 +131,8 @@
         .haha{
             padding: 10px;
             font-family: "Varela Round", sans-serif;
-            font-size: 16px;
+            font-size: 12px;
+            color: #888;
         }
         .hed{
             display: grid;

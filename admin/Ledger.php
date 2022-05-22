@@ -30,13 +30,12 @@
                 <li><a href="manage_partner.php">Manage Partners</a></li>
                 <li class = 'selection' ><a href="ledger.php">Ledger</a></li>
             </ul>
-        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Products</a></li>
+        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Sales Inventory</a></li>
         <li><a href = "/Pet/admin/add_products.php"><img src="../uploads/box.svg" class="navicons">Add Product</a></li>
         <li><a href = "/Pet/admin/deliveries.php"><img src="../uploads/deliver.svg" class="navicons">Deliveries(<?php echo count_deliveries();?>)</a></li>
         <li><a href = "/Pet/admin/viewall_orders.php"><img src="../uploads/deliver.svg" class="navicons">Orders(<?php echo count_orders();?>)</a></li>
-        <li><a href= "/Pet/admin/viewall_coupons.php"><img src="../uploads/coupon.svg" class="navicons">Coupons</a></li> 
         <li><a href= "/Pet/admin/users.php"><img src="../uploads/user.svg" class="navicons">Users</a></li> 
-        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Sales Inventory</a></li>
+        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Generate Report</a></li>
         <li><a href= "/Pet/admin/petcenterApplication.php"><img src="../uploads/deliver.svg" class="navicons">Pet Center Application</a></li>
         </ul>
 </div>
@@ -64,17 +63,17 @@
        
        
         <div class = 'gridnasad'>
-           <p>Transaction Number</p>
+           <p class = 'heads'>Transaction Number</p>
 
-            <p>Full Name</p>
+            <p  class = 'heads'>Full Name</p>
 
-            <p>Selected Organization</p>
+            <p  class = 'heads'>Selected Organization</p>
 
-            <p>Contact Number</p>
+            <p  class = 'heads'>Contact Number</p>
 
-            <p>Date Confirmed</p>
+            <p  class = 'heads'>Date Confirmed</p>
 
-            <p>Coupon Code</p>
+            <p  class = 'heads'>Coupon Code</p>
             <div></div>
         </div>
         <tr>
@@ -147,9 +146,16 @@
         font-weight: bold;
         color: white;
     }
+    .heads{
+        font-family: "Varela Round", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #777;
+    text-align: center;
+    }
     .gridnasad{
         display: grid;
-        grid-template-columns:  20% 20% 20% 20% 20%;
+        grid-template-columns:  15% 20% 20% 20% 10% 10%;
         text-align: center;
         font-weight: bold;
         border-bottom: 1px solid black;
@@ -161,7 +167,7 @@
     }
     .inner{
         display: grid;
-        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-columns: 15% 20% 20% 20% 10% 10%;
         margin-top: 1%;
     padding: 10px;
     background: #f4f4f4;

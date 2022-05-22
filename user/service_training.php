@@ -26,9 +26,10 @@
         </div>
         <div class = 'hed' ><img src = '../uploads/bird.gif' id = 'imgTop'><p class = 'ttlHead' >twit</p>
         </div><br>
-              <ul>
+            <h3>Pet Training Services</h3>
+              <div class = 'fdogs'>
                    <?php pet_training_facilities(); ?>
-                   </ul>
+                   </div>
           </div>
          
             <?php

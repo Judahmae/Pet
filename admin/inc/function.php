@@ -105,6 +105,7 @@
             $paymaya = $_POST['paymaya'];
             $org_manager = $_POST['org_manager'];
             $facebook = $_POST['facebook'];
+            $description = $_POST['description'];
             
             $org_photo = $_FILES['org_photo']['name'];
             $org_photo_tmp = $_FILES['org_photo']['tmp_name'];
@@ -121,7 +122,8 @@
                 website,
                 paymaya,
                 org_manager,
-                facebook
+                facebook,
+                org_details
             ) 
             VALUES(
                 '$org_name',
@@ -133,7 +135,8 @@
                 '$website',
                 '$paymaya',
                 '$org_manager',
-                '$facebook'
+                '$facebook',
+                '$description'
             )");
             if($add_org->execute())
             {
@@ -601,7 +604,7 @@
             $user_address = $row_user['user_address'];
             echo 
             "<div class = 'innerGrid'>
-                <p>".$row['order_id']."</p>
+                <p>".$row['delivery_id']."</p>
                 <p>".$row['items']."</p>
                 <p>".$row['total_amount']."</p>
                 <p>".$row['user_username']."</p>
@@ -779,9 +782,7 @@
                     <div class = 'holdest'>
                     <p>".$row['amount']."</p>
                     </div>
-                    <div class = 'holdest'>
-                    <img class = 'imagePP' src = '../uploads/donations/".$row['proof_photo']."'/>
-                    </div>
+                    
                     <div class = 'holdest'>
                     <div id = 'aksyon'>
                     <button id = 'views2'  name = 'confirm_donation' value = ".$row['id'].">Confirm</button>
@@ -869,7 +870,7 @@
                    
                     <input type = 'hidden' name = 'email' value = '".$row['email']."' />
                     <input type = 'hidden' name = 'pet_center_id' value = '".$row['pet_center_id']."' />
-                    <a href = view_application.php?view=".$row['pet_center_id'].">View</a>
+                    <a class = 'btnV' href = view_application.php?view=".$row['pet_center_id'].">View</a>
                 </div>
                
             </form>";
@@ -943,26 +944,29 @@
                         </div>
                         <div>
                         <div class = 'holdest'>
-                        <p>Transaction No.</p>
+                        <p class = 'lebss'>Transaction No.</p>
                         <input  type = 'hidden' name = 'transaction_number' value = '".$row['transaction_number']."' />
-                        <p  name = 'transaction_number'>".$row['transaction_number']."</p>
+                        <p  class = 'dates' name = 'transaction_number'>".$row['transaction_number']."</p>
                         </div>
                         <div class = 'holdest'>
-                        <p>Name</p>
+                        <p class = 'lebss'>Name</p>
                         <input type = 'hidden' name = 'full_name' value = '".$row['full_name']."' />
-                        <p>".$row['full_name']."</p>
+                        <p class = 'dates'>".$row['full_name']."</p>
                         </div>
+                        <div class = 'holdest'>
+                        <p class = 'lebss'>Organization Name</p>
                         <input type = 'hidden' name = 'org_name' value = '".$org_name."' />
-                        <div class = 'holdest'>
-                        <p>".$org_name."</p>
+                        
+                        <p class = 'dates'>".$org_name."</p>
                         </div>
                         <div class = 'holdest'>
-                        <p>GCash No.</p>
+                        <p class = 'lebss'>Bank Acc. No.</p>
                         <input type = 'hidden' name = 'contact_number' value = '".$row['contact_number']."' />
-                        <p>".$row['contact_number']."</p>
+                        <p class = 'dates'>".$row['contact_number']."</p>
                         </div>
                         <div class = 'holdest'>
-                        <p>".$row['amount']."</p>
+                        <p class = 'lebss'>Amount</p>
+                        <p class = 'dates'>".$row['amount']."</p>
                         </div>
                        
                        
@@ -1186,6 +1190,22 @@
             $row_cat = $fetch_cat->fetch();
 
             echo "
+            <div class = 'bodies'>
+            <form method = 'POST' enctype = 'multipart/form-data'>
+                
+                       <div class = 'mains'>
+                        <img class = 'imges' src = '../uploads/products/".$row['pro_img']."' />
+                        <div class = 'buts'>
+                        <div class='drop-zone'>
+                    <span class='drop-zone__prompt'>Drop file here or click to upload</span>
+                    <input type='file' name = 'sample_img1' class='drop-zone__input'>
+                    </div>
+
+                    
+                        <button class = 'updateBtn' name = 'update_first_image'>Update Image</button>
+                        </div>
+                        </div>
+            </form>
             <form method = 'POST' enctype = 'multipart/form-data'>
                 <div class = 'body'>
                 <div class = 'seconds'>
@@ -1216,7 +1236,7 @@
                         <input class = 'oks' type='text' name = 'pro_quantity' value = '".$row['pro_quantity']."'/>
                     </div>
                     <div class = 'holders'>
-                        <p class = 'lebs' >Product Keyword: </p>
+                        <p class = 'lebs' >Product Description: </p>
                         <input class = 'oks' type='text' name = 'pro_keyword' value = '".$row['pro_keyword']."'/>
                     </di>
                     
@@ -1226,38 +1246,10 @@
                 </div>
                 <br>
             </form>
-            <div class = 'bodies'>
-            <form method = 'POST' enctype = 'multipart/form-data'>
-                <div class = 'body2'>
-                    <div>
-                        <p class = 'lebs'>Sample Image #1</p>
-                        <img class = 'imges' src = '../uploads/products/".$row['pro_img']."' />
-                        <br><input type = 'file' name = 'sample_img1' value = ".$row['pro_img']." required/><br>
-                    </div>
-                </div><br>
-                <button name = 'update_first_image'>Update First Image</button>
-            </form>
-            <form method = 'POST' enctype = 'multipart/form-data'>
-                <div class = 'body2'>
-                    <div>
-                        <p class = 'lebs'>Sample Image #2</p>
-                        <img class = 'imges' src = '../uploads/products/".$row['pro_img2']."'/>
-                        <br><input type = 'file' name = 'sample_img2' value = ".$row['pro_img2']." required/><br>
-                    </div>
-                </div><br>
-                <button name = 'update_second_image'>Update Second Image</button>
-            </form>
-            <form method = 'POST' enctype = 'multipart/form-data'>
-                <div class = 'body2'>
-                    <div>
-                        <p class = 'lebs'>Sample Image #1</p>
-                        <img class = 'imges' src = '../uploads/products/".$row['pro_img3']."'/>
-                        <br><input type = 'file' name = 'sample_img3' value = ".$row['pro_img3']." required/><br>
-                    </div>
-                </div><br>
-                <button name = 'update_third_image'>Update Third Image</button>
-            </form>
-            </div>";
+
+            </div>
+            
+           ";
             if(isset($_POST['update_prod']))
             {
                 $cat_name = $_POST['cat_name'];

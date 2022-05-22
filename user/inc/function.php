@@ -534,11 +534,7 @@
                     <p class = 'Heads' >".$row_org['org_name']."</p>
                     <div id = 'oks'>
                         <p class = 'fsTxt'>
-                        IRO cares for over 100 companion animals who are awaiting adoption into forever homes.<br>  IRO also cares for a number of animals who are receiving treatment for medical injuries or illnesses or are being rehabilitated for behavioural issues relating to their backgrounds.
-
-IRO is run entirely by a team of volunteers and as a community-focused organization; IRO not only relies on the support of the public (both local and international) for funding but also to assist with the organization’s operations.
-
-IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (3) non-profit animal rescue organization.</p>
+                        ".$row_org['org_details']."</p>
                         <div class = 'mainInfos'>
                         <div class = 'rightInfo'>
                        
@@ -652,13 +648,25 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
         while($row_pro = $fetch_pro->fetch()):
             echo "<div class = 'idNiSha'>
             <form method = 'post' enctype='multipart/form-data'>
-            <a class = 'aTag' href='show_service_info.php?id=".$row_pro['service_id']."'>
+            <a class = 'aTag' href='show_service_info.php?id=".$row_pro['id']."'>
                
                 <img class = 'fikture'  src ='../uploads/user_profile/".$row_pro['service_photo']."' />
                 <div class = 'prodDet'>
-                <p class = 'head4' >".$row_pro['services_name']."</p>
-                 
-                        <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row_pro['id']."'>Show Info</a> 
+                <p class = 'head4' >".$row_pro['services_name']."</p>";
+                 if($row_pro['accept_coupon'] == "Yes")
+                 {
+                    echo "
+                    <div class = 'band'>
+                   
+                    <img class = 'couponBand' src = '../uploads/couponIcon.png'>
+                    <p class ='icons'>Coupons Accepted</p>
+                    </div>";
+                 }
+                 else
+                 {
+                    echo "<br><br>";
+                 }
+                        echo"<a class = 'btnLinkView' href = 'show_service_info.php?id=".$row_pro['id']."'>Show Info</a> 
                     <input type = 'hidden' value = '".$row_pro['id']."' name = 'pro_id' />
                 </div>
             </a>
@@ -687,13 +695,23 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
         while($row_pro = $fetch_pro->fetch()):
             echo "<div class = 'idNiSha'>
             <form method = 'post' enctype='multipart/form-data'>
-            <a class = 'aTag' href='show_service_info.php?id=".$row_pro['service_id']."'>
+            <a class = 'aTag' href='show_service_info.php?id=".$row_pro['id']."'>
                
                 <img class = 'fikture'  src ='../uploads/user_profile/".$row_pro['service_photo']."' />
                 <div class = 'prodDet'>
-                <p class = 'head4' >".$row_pro['services_name']."</p>
-                 
-                        <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row_pro['id']."'>Show Info</a> 
+                <p class = 'head4' >".$row_pro['services_name']."</p>";
+                if($row_pro['accept_coupon'] == "Yes")
+                {
+                   echo "  <div class = 'band'>
+                   
+                   <img class = 'couponBand' src = '../uploads/couponIcon.png'>
+                   <p class ='icons'>Coupons Accepted</p>
+                   </div>";
+                }else
+                {
+                   echo "<br><br>";
+                }
+                       echo" <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row_pro['id']."'>Show Info</a> 
                     <input type = 'hidden' value = '".$row_pro['id']."' name = 'pro_id' />
                 </div>
             </a>
@@ -722,13 +740,23 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
         while($row_pro = $fetch_pro->fetch()):
             echo "<div class = 'idNiSha'>
             <form method = 'post' enctype='multipart/form-data'>
-            <a class = 'aTag' href='show_service_info.php?id=".$row_pro['service_id']."'>
+            <a class = 'aTag' href='show_service_info.php?id=".$row_pro['id']."'>
                
                 <img class = 'fikture'  src ='../uploads/user_profile/".$row_pro['service_photo']."' />
                 <div class = 'prodDet'>
-                <p class = 'head4' >".$row_pro['services_name']."</p>
-                 
-                        <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row_pro['id']."'>Show Info</a> 
+                <p class = 'head4' >".$row_pro['services_name']."</p>";
+                if($row_pro['accept_coupon'] == "Yes")
+                {
+                   echo "<div class = 'band'>
+                   
+                   <img class = 'couponBand' src = '../uploads/couponIcon.png'>
+                   <p class ='icons'>Coupons Accepted</p>
+                   </div>";
+                }else
+                {
+                   echo "<br><br>";
+                }
+                      echo"  <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row_pro['id']."'>Show Info</a> 
                     <input type = 'hidden' value = '".$row_pro['id']."' name = 'pro_id' />
                 </div>
             </a>
@@ -757,13 +785,23 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
         while($row_pro = $fetch_pro->fetch()):
             echo "<div class = 'idNiSha'>
             <form method = 'post' enctype='multipart/form-data'>
-            <a class = 'aTag' href='show_service_info.php?id=".$row_pro['service_id']."'>
+            <a class = 'aTag' href='show_service_info.php?id=".$row_pro['id']."'>
                
                 <img class = 'fikture'  src ='../uploads/user_profile/".$row_pro['service_photo']."' />
                 <div class = 'prodDet'>
-                <p class = 'head4' >".$row_pro['services_name']."</p>
-                 
-                        <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row_pro['id']."'>Show Info</a> 
+                <p class = 'head4' >".$row_pro['services_name']."</p>";
+                if($row_pro['accept_coupon'] == "Yes")
+                {
+                   echo "<div class = 'band'>
+                   
+                   <img class = 'couponBand' src = '../uploads/couponIcon.png'>
+                   <p class ='icons'>Coupons Accepted</p>
+                   </div>";
+                }else
+                {
+                   echo "<br><br>";
+                }
+                     echo"   <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row_pro['id']."'>Show Info</a> 
                     <input type = 'hidden' value = '".$row_pro['id']."' name = 'pro_id' />
                 </div>
             </a>
@@ -792,13 +830,23 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
         while($row_pro = $fetch_pro->fetch()):
             echo "<div class = 'idNiSha'>
             <form method = 'post' enctype='multipart/form-data'>
-            <a class = 'aTag' href='show_service_info.php?id=".$row_pro['service_id']."'>
+            <a class = 'aTag' href='show_service_info.php?id=".$row_pro['id']."'>
                
                 <img class = 'fikture'  src ='../uploads/user_profile/".$row_pro['service_photo']."' />
                 <div class = 'prodDet'>
-                <p class = 'head4' >".$row_pro['services_name']."</p>
-                 
-                        <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row_pro['id']."'>Show Info</a> 
+                <p class = 'head4' >".$row_pro['services_name']."</p>";
+                if($row_pro['accept_coupon'] == "Yes")
+                {
+                   echo "<div class = 'band'>
+                   
+                   <img class = 'couponBand' src = '../uploads/couponIcon.png'>
+                   <p class ='icons'>Coupons Accepted</p>
+                   </div>";
+                }else
+                {
+                   echo "<br><br>";
+                }
+                     echo"   <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row_pro['id']."'>Show Info</a> 
                     <input type = 'hidden' value = '".$row_pro['id']."' name = 'pro_id' />
                 </div>
             </a>
@@ -1204,17 +1252,7 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
                 <div id = 'pro_img'>
 
                     <img id= 'mainPik' class = 'mainImage' src ='../uploads/products/".$row_pro['pro_img']."'/>
-                    <div class = 'images'>
-                        <div class = 'imgDiv' id = 'dems' onclick = 'myFunc()'  >
-                            <img class = 'underImg' src ='../uploads/products/".$row_pro['pro_img']."'/>
-                        </div>
-                        <div class = 'imgDiv'>
-                    
-                            <img class = 'underImg' src ='../uploads/products/".$row_pro['pro_img2']."'/>
-                        </div>
-                        <div class = 'imgDiv'>
-                            <img class = 'underImg' src ='../uploads/products/".$row_pro['pro_img3']."'/>
-                        </div>
+                   
                 </div>
 
 
@@ -1333,8 +1371,20 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
                 
                 <img class = 'fikture'  src ='../uploads/user_profile/".$row['service_photo']."' />
                 <div class = 'prodDet'>
-                <p class = 'head4'>".$row['services_name']."</p>
-                    <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row['id']."'>Show Info</a>
+                <p class = 'head4'>".$row['services_name']."</p>";
+                if($row['accept_coupon'] == "Yes")
+                {
+                    echo "  <div class = 'band'>
+                   
+                   <img class = 'couponBand' src = '../uploads/couponIcon.png'>
+                   <p class ='icons'>Coupons Accepted</p>
+                   </div>";
+                }
+                if($row['accept_coupon'] == "No")
+                {
+                    echo "<br><br>";
+                }
+                echo"    <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row['id']."'>Show Info</a>
                     <input type = 'hidden' value = '".$row['id']."' name = 'pro_id' />
                 </div>
             </a>
@@ -1358,25 +1408,36 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
         $sql2->setFetchMode(PDO:: FETCH_ASSOC);
         $sql2->execute();
 
-        echo "<h3>Pet Hotels</h3>";
         while($row = $sql2->fetch()):
             
+       
             echo
-            "<li>
+            "<div class = 'idNiSha'>
             <form method = 'post' enctype='multipart/form-data'>
-            <a href='show_service_info.php?id=".$row['id']."'>
-                <h4>".$row['services_name']."</h4>
-                <img src ='../uploads/user_profile/".$row['service_photo']."' />
-                <center>
-                    <button id = 'pro_btnView'>
-                        <a href = 'show_service_info.php?id=".$row['id']."'>Show Info</a>
-                    </button>
+            <a class = 'aTag' href='show_service_info.php?id=".$row['id']."'>
+                
+                <img class = 'fikture'  src ='../uploads/user_profile/".$row['service_photo']."' />
+                <div class = 'prodDet'>
+                <p class = 'head4'>".$row['services_name']."</p>";
+                if($row['accept_coupon'] == "Yes")
+                {
+                    echo "  <div class = 'band'>
+                   
+                    <img class = 'couponBand' src = '../uploads/couponIcon.png'>
+                    <p class ='icons'>Coupons Accepted</p>
+                    </div>";
+                }
+                if($row['accept_coupon'] == "No")
+                {
+                    echo "<br><br>";
+                }
+                echo"    <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row['id']."'>Show Info</a>
                     <input type = 'hidden' value = '".$row['id']."' name = 'pro_id' />
-                </center>
+                </div>
             </a>
             </form>
           
-        </li>";
+        </div>";
         endwhile;
     }
 
@@ -1394,25 +1455,36 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
         $sql2->setFetchMode(PDO:: FETCH_ASSOC);
         $sql2->execute();
 
-        echo "<h3>Pet Training Services</h3>";
+        
         while($row = $sql2->fetch()):
             
             echo
-            "<li>
+            "<div class = 'idNiSha'>
             <form method = 'post' enctype='multipart/form-data'>
-            <a href='show_service_info.php?id=".$row['id']."'>
-                <h4>".$row['services_name']."</h4>
-                <img src ='../uploads/user_profile/".$row['service_photo']."' />
-                <center>
-                    <button id = 'pro_btnView'>
-                        <a href = 'show_service_info.php?id=".$row['id']."'>Show Info</a>
-                    </button>
+            <a class = 'aTag' href='show_service_info.php?id=".$row['id']."'>
+                
+                <img class = 'fikture'  src ='../uploads/user_profile/".$row['service_photo']."' />
+                <div class = 'prodDet'>
+                <p class = 'head4'>".$row['services_name']."</p>";
+                if($row['accept_coupon'] == "Yes")
+                {
+                    echo "  <div class = 'band'>
+                   
+                    <img class = 'couponBand' src = '../uploads/couponIcon.png'>
+                    <p class ='icons'>Coupons Accepted</p>
+                    </div>";
+                }
+                if($row['accept_coupon'] == "No")
+                {
+                    echo "<br><br>";
+                }
+                echo"    <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row['id']."'>Show Info</a>
                     <input type = 'hidden' value = '".$row['id']."' name = 'pro_id' />
-                </center>
+                </div>
             </a>
             </form>
           
-        </li>";
+        </div>";
         endwhile;
     }
 
@@ -1430,25 +1502,36 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
         $sql2->setFetchMode(PDO:: FETCH_ASSOC);
         $sql2->execute();
 
-        echo "<h3>Pet Vet Clinics</h3>";
+        
         while($row = $sql2->fetch()):
             
             echo
-            "<li>
+            "<div class = 'idNiSha'>
             <form method = 'post' enctype='multipart/form-data'>
-            <a href='show_service_info.php?id=".$row['id']."'>
-                <h4>".$row['services_name']."</h4>
-                <img src ='../uploads/user_profile/".$row['service_photo']."' />
-                <center>
-                    <button id = 'pro_btnView'>
-                        <a href = 'show_service_info.php?id=".$row['id']."'>Show Info</a>
-                    </button>
+            <a class = 'aTag' href='show_service_info.php?id=".$row['id']."'>
+                
+                <img class = 'fikture'  src ='../uploads/user_profile/".$row['service_photo']."' />
+                <div class = 'prodDet'>
+                <p class = 'head4'>".$row['services_name']."</p>";
+                if($row['accept_coupon'] == "Yes")
+                {
+                    echo "  <div class = 'band'>
+                   
+                    <img class = 'couponBand' src = '../uploads/couponIcon.png'>
+                    <p class ='icons'>Coupons Accepted</p>
+                    </div>";
+                }
+                if($row['accept_coupon'] == "No")
+                {
+                    echo "<br><br>";
+                }
+                echo"    <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row['id']."'>Show Info</a>
                     <input type = 'hidden' value = '".$row['id']."' name = 'pro_id' />
-                </center>
+                </div>
             </a>
             </form>
           
-        </li>";
+        </div>";
         endwhile;
     }
 
@@ -1466,25 +1549,35 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
         $sql2->setFetchMode(PDO:: FETCH_ASSOC);
         $sql2->execute();
 
-        echo "<h3>Other Services</h3>";
+      
         while($row = $sql2->fetch()):
             
-            echo
-            "<li>
+            "<div class = 'idNiSha'>
             <form method = 'post' enctype='multipart/form-data'>
-            <a href='show_service_info.php?id=".$row['id']."'>
-                <h4>".$row['services_name']."</h4>
-                <img src ='../uploads/user_profile/".$row['service_photo']."' />
-                <center>
-                    <button id = 'pro_btnView'>
-                        <a href = 'show_service_info.php?id=".$row['id']."'>Show Info</a>
-                    </button>
+            <a class = 'aTag' href='show_service_info.php?id=".$row['id']."'>
+                
+                <img class = 'fikture'  src ='../uploads/user_profile/".$row['service_photo']."' />
+                <div class = 'prodDet'>
+                <p class = 'head4'>".$row['services_name']."</p>";
+                if($row['accept_coupon'] == "Yes")
+                {
+                    echo "  <div class = 'band'>
+                   
+                    <img class = 'couponBand' src = '../uploads/couponIcon.png'>
+                    <p class ='icons'>Coupons Accepted</p>
+                    </div>";
+                }
+                if($row['accept_coupon'] == "No")
+                {
+                    echo "<br><br>";
+                }
+                echo"    <a class = 'btnLinkView' href = 'show_service_info.php?id=".$row['id']."'>Show Info</a>
                     <input type = 'hidden' value = '".$row['id']."' name = 'pro_id' />
-                </center>
+                </div>
             </a>
             </form>
           
-        </li>";
+        </div>";
         endwhile;
     }
 
@@ -1512,7 +1605,7 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
             $municipality = $row_services['municipality'];
             $full_location = $row_services['full_location'];
             $services_name = $row_services['services_name'];
-            $location = str_replace(" ", "+", $full_location);
+            $location = $municipality;
 
             $service_cat = $row_services['service_id'];
 
@@ -1566,18 +1659,19 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
                             </div>
                             <div class = 'holdest'>
                             <p class = 'lebs'>Discount Offer: </p>
-                            <p class = 'conts'></p>
+                            <p class = 'conts'>".$row_services['discount']."%</p>
                         </div>
                            
                             <div class = 'btnss' >";
-                                if($row_services['accept_coupon'] == 'No')
-                                {
-                                    echo "<a class = 'bbm' href = 'avail_service_nocoupon.php?avail_service=".$row_services['id']."'>Reserve(without coupon)</a>";
-                                }
-                               if($row_services['accept_coupon'] == 'Yes')
-                               {
-                                    echo " <a  class = 'bbm' href = 'avail_service.php?avail_service=".$row_services['id']."' >Reserve (with coupon)</a>";
-                               }
+                            
+                            if($row_services['accept_coupon'] == 'No')
+                            {
+                                echo "<a class = 'bbm' href = 'avail_service_nocoupon.php?avail_service=".$row_services['id']."'>Reserve(without coupon)</a>";
+                            }
+                            if($row_services['accept_coupon'] == 'Yes')
+                            {
+                                echo " <a  class = 'bbm' href = 'avail_service.php?avail_service=".$row_services['id']."' >Reserve (with coupon)</a>";
+                            }
                                 
                            echo" </div>
                             <br>
@@ -1588,7 +1682,7 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
                         <div class = 'loces'>
                        <br>
                         <p class = 'loc'>Location</p>
-                        <iframe class  = 'mapGraph' src='https://maps.google.com/maps?q=".$location."&output=embed'></iframe>
+                        <iframe class  = 'mapGraph' src='https://maps.google.com/maps?q=".$services_name."+".$full_location."+".$st."+".$barangay."+".$municipality."&output=embed'></iframe>
                     </div>
                     </div>
                 </div>
@@ -1906,22 +2000,79 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
 
                 $row2 = $view_coupon->rowCount();
 
-                if($dateTimestamp > $dateTimestamp2)
+                $dt1=strtotime($reserve_date);
+                $dt2=date("l", $dt1);
+                $dt3=strtolower($dt2);
+
+                if(($dt3 != "saturday") && ($dt3 != "sunday"))
                 {
-                    if($dateTimestamp3 >= $service_time_open && $dateTimestamp3 < $service_time_close)
+                    if($dateTimestamp > $dateTimestamp2)
                     {
-                        if($dateTimestamp != $reserved_date && $dateTimestamp3 != $reserved_time)
+                        if($dateTimestamp3 >= $service_time_open && $dateTimestamp3 < $service_time_close)
                         {
-                            if($coupon_code != "asdasdsadsadsadsadsa" || $coupon_code != "sakdnsakdnsakdnkas" || $coupon_code != "aslkdmaskldsakdnjasnjna" || $coupon_code != "jasndinindaisndisandi" || $coupon_code != "asmdioasmdsiandisad")
+                            if($dateTimestamp != $reserved_date && $dateTimestamp3 != $reserved_time)
                             {
-                                if(strlen($coupon_code) <= 9)
+                                if($coupon_code != "asdasdsadsadsadsadsa" || $coupon_code != "sakdnsakdnsakdnkas" || $coupon_code != "aslkdmaskldsakdnjasnjna" || $coupon_code != "jasndinindaisndisandi" || $coupon_code != "asmdioasmdsiandisad")
                                 {
-                                    if($row5!=0)
+                                    if(strlen($coupon_code) <= 9)
                                     {
-                                        if($row6!=0)
+                                        if($row5!=0)
                                         {
-                                            if($coupon_code == '')
+                                            if($row6!=0)
                                             {
+                                                if($coupon_code == '')
+                                                {
+                                                    $receiver = $row4['user_email'];
+                                                    $subject = "For Confirmation";
+                                                    $body = "Your Reservation will be validated to the pet center";
+                                                    $sender = "ianjohn0101@gmail.com";
+                    
+                                                    $reserve_service = $con->prepare("INSERT INTO reserve_services (
+                                                        pet_center_id,
+                                                        service_id,
+                                                        user_id,
+                                                        service_cost,
+                                                        reserve_date,
+                                                        reserve_time,
+                                                        coupon_code,
+                                                        service_status
+                                                    ) 
+                                                    VALUES (
+                                                        '$pet_center_id',
+                                                        '$service_id',
+                                                        '$current_user',
+                                                        '$service_cost',
+                                                        '$reserve_date',
+                                                        '$reserve_time',
+                                                        '$coupon_code',
+                                                        'For Confirmation'
+                                                    )");
+                                        
+                                                    if($reserve_service->execute())
+                                                    {
+                                                        echo "<script>alert('PLEASE WAIT FOR THE PETCENTER TO CONFIRM!');</script>"; 
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "<script>alert('UNSUCCESSFUL');</script>";
+                                                    }
+                                                    mail($receiver, $subject, $body, $sender);
+                                                }
+                                            }
+                                            else
+                                            {
+                                                echo "<script>alert('Coupon Already Used!');</script>";
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if($row2!=0)
+                                            {
+                                                $total = $service_cost * $serv_discount;
+                                                $convertfloat = floatval($total);
+                
+                                                $service_total_cost = $service_cost - $convertfloat;
+                
                                                 $receiver = $row4['user_email'];
                                                 $subject = "For Confirmation";
                                                 $body = "Your Reservation will be validated to the pet center";
@@ -1941,7 +2092,7 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
                                                     '$pet_center_id',
                                                     '$service_id',
                                                     '$current_user',
-                                                    '$service_cost',
+                                                    '$service_total_cost',
                                                     '$reserve_date',
                                                     '$reserve_time',
                                                     '$coupon_code',
@@ -1950,6 +2101,7 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
                                     
                                                 if($reserve_service->execute())
                                                 {
+                                                   
                                                     echo "<script>alert('PLEASE WAIT FOR THE PETCENTER TO CONFIRM!');</script>"; 
                                                 }
                                                 else
@@ -1957,67 +2109,20 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
                                                     echo "<script>alert('UNSUCCESSFUL');</script>";
                                                 }
                                                 mail($receiver, $subject, $body, $sender);
-                                            }
-                                        }
-                                        else
-                                        {
-                                            echo "<script>alert('Coupon Already Used!');</script>";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        if($row2!=0)
-                                        {
-                                            $total = $service_cost * $serv_discount;
-                                            $convertfloat = floatval($total);
-            
-                                            $service_total_cost = $service_cost - $convertfloat;
-            
-                                            $receiver = $row4['user_email'];
-                                            $subject = "For Confirmation";
-                                            $body = "Your Reservation will be validated to the pet center";
-                                            $sender = "ianjohn0101@gmail.com";
-            
-                                            $reserve_service = $con->prepare("INSERT INTO reserve_services (
-                                                pet_center_id,
-                                                service_id,
-                                                user_id,
-                                                service_cost,
-                                                reserve_date,
-                                                reserve_time,
-                                                coupon_code,
-                                                service_status
-                                            ) 
-                                            VALUES (
-                                                '$pet_center_id',
-                                                '$service_id',
-                                                '$current_user',
-                                                '$service_total_cost',
-                                                '$reserve_date',
-                                                '$reserve_time',
-                                                '$coupon_code',
-                                                'For Confirmation'
-                                            )");
-                                
-                                            if($reserve_service->execute())
-                                            {
-                                               
-                                                echo "<script>alert('PLEASE WAIT FOR THE PETCENTER TO CONFIRM!');</script>"; 
+    
                                             }
                                             else
                                             {
-                                                echo "<script>alert('UNSUCCESSFUL');</script>";
+                                                echo "<script>alert('Coupon Already Used!');</script>";
                                             }
-                                            mail($receiver, $subject, $body, $sender);
-
-                                        }
-                                        else
-                                        {
-                                            echo "<script>alert('Coupon Already Used!');</script>";
                                         }
                                     }
+    
+                                    else
+                                    {
+                                        echo "<script>alert('Coupon Invalid.');</script>";
+                                    }
                                 }
-
                                 else
                                 {
                                     echo "<script>alert('Coupon Invalid.');</script>";
@@ -2025,22 +2130,22 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
                             }
                             else
                             {
-                                echo "<script>alert('Coupon Invalid.');</script>";
+                                echo "<script>alert('Time reserved already, chose another date or time.');</script>";
                             }
                         }
                         else
                         {
-                            echo "<script>alert('Time reserved already, chose another date or time.');</script>";
-                        }
+                            echo "<script>alert('Time you chose is invalid, please check the time open and time close of the service.');</script>";
+                        }        
                     }
                     else
                     {
-                        echo "<script>alert('Time you chose is invalid, please check the time open and time close of the service.');</script>";
-                    }        
+                        echo "<script>alert('INVALID DATE!');</script>";
+                    }
                 }
                 else
                 {
-                    echo "<script>alert('INVALID DATE!');</script>";
+                    echo "<script>alert('No reservation during closing time!');</script>";
                 }
             }
         }
@@ -2073,7 +2178,7 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
                 
          
     
-                $sql2 = $con->prepare("SELECT active_coupon FROM pet_center_tbl WHERE pet_center_id = $pet_center_id");
+                $sql2 = $con->prepare("SELECT accept_coupon FROM pet_center_tbl WHERE pet_center_id = $pet_center_id");
                 $sql2->setFetchMode(PDO:: FETCH_ASSOC);
                 $sql2->execute();
     
@@ -2139,79 +2244,90 @@ IRO is affiliated with Friends for the Protection of Animals (USA), a US-501 c (
                     $row_date_and_time = $view_time->fetch();
                     $reserved_date = $row_date_and_time['reserve_date'];
                     $reserved_time = $row_date_and_time['reserve_time'];
-                    
-                    if($dateTimestamp > $dateTimestamp2)
+
+                    $dt1=strtotime($reserve_date);
+                    $dt2=date("l", $dt1);
+                    $dt3=strtolower($dt2);
+
+                    if(($dt3 != "saturday") && ($dt3 != "sunday"))
                     {
-                        if($dateTimestamp3 >= $service_time_open && $dateTimestamp3 < $service_time_close)
+                        if($dateTimestamp > $dateTimestamp2)
                         {
-                            if($dateTimestamp != $reserved_date && $dateTimestamp3 != $reserved_time)
+                            if($dateTimestamp3 >= $service_time_open && $dateTimestamp3 < $service_time_close)
                             {
-                                
-        
-                                $sql2 = $con->query("SELECT * FROM reserve_services");
-                                $sql2->setFetchMode(PDO:: FETCH_ASSOC);
-                                $sql2->execute();
-        
-                                $row = $sql->rowCount();
-                                $row_user = $sql2->fetch();
-                                $user_id = $row_user['user_id'];
-        
-                                $fetch_user_username = $con->prepare("SELECT * FROM users_table WHERE user_id = '$current_user'");
-                                $fetch_user_username->setFetchMode(PDO:: FETCH_ASSOC);
-                                $fetch_user_username->execute();
-                        
-                                $row4 = $fetch_user_username->fetch();
-                                $receiver = $row4['user_email'];
-                                $subject = "For Confirmation";
-                                $body = "Wait for the petcenter to confirm your reservation!";
-                                $sender = "ianjohn0101@gmail.com";
-    
-                                if(mail($receiver, $subject, $body, $sender))
+                                if($dateTimestamp != $reserved_date && $dateTimestamp3 != $reserved_time)
                                 {
-                                    $reserve_service = $con->prepare("INSERT INTO reserve_services (
-                                        pet_center_id,
-                                        service_id,
-                                        user_id,
-                                        service_cost,
-                                        reserve_date,
-                                        reserve_time,
-                                        coupon_code,
-                                        service_status
-                                    ) 
-                                    VALUES (
-                                        '$pet_center_id',
-                                        '$service_id',
-                                        '$current_user',
-                                        '$service_cost',
-                                        '$reserve_date',
-                                        '$reserve_time',
-                                        '$coupon_code',
-                                        'For Confirmation'
-                                    )");
-                        
-                                    if($reserve_service->execute())
+                                    
+            
+                                    $sql2 = $con->query("SELECT * FROM reserve_services");
+                                    $sql2->setFetchMode(PDO:: FETCH_ASSOC);
+                                    $sql2->execute();
+            
+                                    $row = $sql->rowCount();
+                                    $row_user = $sql2->fetch();
+                                    $user_id = $row_user['user_id'];
+            
+                                    $fetch_user_username = $con->prepare("SELECT * FROM users_table WHERE user_id = '$current_user'");
+                                    $fetch_user_username->setFetchMode(PDO:: FETCH_ASSOC);
+                                    $fetch_user_username->execute();
+                            
+                                    $row4 = $fetch_user_username->fetch();
+                                    $receiver = $row4['user_email'];
+                                    $subject = "For Confirmation";
+                                    $body = "Wait for the petcenter to confirm your reservation!";
+                                    $sender = "ianjohn0101@gmail.com";
+        
+                                    if(mail($receiver, $subject, $body, $sender))
                                     {
-                                        echo "<script>alert('PLEASE WAIT FOR THE PETCENTER TO CONFIRM!');</script>";  
+                                        $reserve_service = $con->prepare("INSERT INTO reserve_services (
+                                            pet_center_id,
+                                            service_id,
+                                            user_id,
+                                            service_cost,
+                                            reserve_date,
+                                            reserve_time,
+                                            coupon_code,
+                                            service_status
+                                        ) 
+                                        VALUES (
+                                            '$pet_center_id',
+                                            '$service_id',
+                                            '$current_user',
+                                            '$service_cost',
+                                            '$reserve_date',
+                                            '$reserve_time',
+                                            '$coupon_code',
+                                            'For Confirmation'
+                                        )");
+                            
+                                        if($reserve_service->execute())
+                                        {
+                                            echo "<script>alert('PLEASE WAIT FOR THE PETCENTER TO CONFIRM!');</script>";  
+                                        }
+                                        else
+                                        {
+                                            echo "<script>alert('UNSUCCESSFUL');</script>";
+                                        }
                                     }
-                                    else
-                                    {
-                                        echo "<script>alert('UNSUCCESSFUL');</script>";
-                                    }
+                                }
+                                else
+                                {
+                                    echo "<script>alert('Time reserved already, chose another date or time.');</script>";
                                 }
                             }
                             else
                             {
-                                echo "<script>alert('Time reserved already, chose another date or time.');</script>";
-                            }
+                                echo "<script>alert('Time you chose is invalid, please check the time open and time close of the service.');</script>";
+                            }        
                         }
                         else
                         {
-                            echo "<script>alert('Time you chose is invalid, please check the time open and time close of the service.');</script>";
-                        }        
+                            echo "<script>alert('INVALID DATE!');</script>";
+                        }
                     }
                     else
                     {
-                        echo "<script>alert('INVALID DATE!');</script>";
+                        echo "<script>alert('No Reservation During Closing Time');</script>";
                     }
                 }
             }

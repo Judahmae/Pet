@@ -29,13 +29,12 @@
                 <li><a href="manage_partner.php">Manage Partners</a></li>
                 <li><a href="ledger.php">Ledger</a></li>
             </ul>
-        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Products</a></li>
+        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Sales Inventory</a></li>
         <li><a href = "/Pet/admin/add_products.php"><img src="../uploads/box.svg" class="navicons">Add Product</a></li>
         <li><a href = "/Pet/admin/deliveries.php"><img src="../uploads/deliver.svg" class="navicons">Deliveries(<?php echo count_deliveries();?>)</a></li>
         <li><a href = "/Pet/admin/viewall_orders.php"><img src="../uploads/deliver.svg" class="navicons">Orders(<?php echo count_orders();?>)</a></li>
-        <li><a href= "/Pet/admin/viewall_coupons.php"><img src="../uploads/coupon.svg" class="navicons">Coupons</a></li> 
         <li><a href= "/Pet/admin/users.php"><img src="../uploads/user.svg" class="navicons">Users</a></li> 
-        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Sales Inventory</a></li>
+        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Generate Report</a></li>
         <li><a href= "/Pet/admin/petcenterApplication.php"><img src="../uploads/deliver.svg" class="navicons">Pet Center Application</a></li>
         </ul>
 </div>
@@ -55,10 +54,9 @@
         <div class = 'yopak'>
             <p class = 'heaed'>Transaction Number</p>
                <p class = 'heaed'>Donors Name</p>
-             <p class = 'heaed'>Selected Organization</p>
-               <p  class = 'heaed'>Contact Number</p>
+             <p class = 'heaed'>Selected Org</p>
+               <p  class = 'heaed'>Back Acc. No.</p>
              <p class = 'heaed'>Amount</p>
-                <p class = 'heaed'>Proof of Donation</p>
               <p class = 'heaed'>Action</p>
         </div>
         <div>
@@ -116,13 +114,13 @@
     }
     #forming{
         display: grid;
-        grid-template-columns:  15% 12% 15% 15% 12% 15% 15%;
+        grid-template-columns:  25% 12% 15% 15% 12% 15%;
         font-size: 14px;
         margin-top: 20px;
     }
     .yopak{
         display: grid;
-        grid-template-columns: 15% 12% 15% 15% 12% 15% 15%;
+        grid-template-columns: 25% 12% 15% 15% 12% 15%;
         
         
     }
@@ -165,6 +163,8 @@
   font-weight: bold;
   color: black;
     }
+
+    
     </style>
     <script>
         var month = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];

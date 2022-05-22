@@ -31,13 +31,12 @@
                 <li class = 'selection' ><a href="manage_partner.php">Manage Partners</a></li>
                 <li><a href="ledger.php">Ledger</a></li>
             </ul>
-        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Products</a></li>
+        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Product Inventory</a></li>
         <li><a href = "/Pet/admin/add_products.php"><img src="../uploads/box.svg" class="navicons">Add Product</a></li>
         <li><a href = "/Pet/admin/viewall_products.php"><img src="../uploads/deliver.svg" class="navicons">Deliveries(<?php echo count_deliveries();?>)</a></li>
         <li><a href = "/Pet/admin/viewall_orders.php"><img src="../uploads/deliver.svg" class="navicons">Orders(<?php echo count_orders();?>)</a></li>
-        <li><a href= "/Pet/admin/viewall_coupons.php"><img src="../uploads/coupon.svg" class="navicons">Coupons</a></li> 
         <li><a href= "/Pet/admin/users.php"><img src="../uploads/user.svg" class="navicons">Users</a></li> 
-        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Sales Inventory</a></li>
+        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Generate Report</a></li>
         <li><a href= "/Pet/admin/petcenterApplication.php"><img src="../uploads/deliver.svg" class="navicons">Pet Center Application</a></li>
         </ul>
 </div>
@@ -64,8 +63,10 @@
         $row = $edit_details->fetch();
 
         echo
-        "<form method = 'POST' action = 'edit_org.php' enctype = 'multipart/form-data'>
-        <div class = 'formGrid'>
+        "
+     
+        <form method = 'POST' action = 'edit_org.php' enctype = 'multipart/form-data'>
+        
             <div class = 'inbodsDiv'>
                 <p class = 'labes'>Organization Name</p>
                 <input class = 'inp' type = 'text' name = 'org_name' value = '".$row['org_name']."' />
@@ -102,24 +103,34 @@
             <p class = 'labes'>Facebook(Optional)</p>
                 <input class = 'inp' type = 'text' name = 'facebook' value = '".$row['facebook']."' />
             </div>
-            <form method = 'POST' enctype = 'multipart/form-data'>
-            <div class = 'inbodsDiv' >
-            <p class = 'labes'>Photo</p>
-            <div class = 'unity'>
-            <div class='drop-zone'>
-            <span class='drop-zone__prompt'>Drop file here or click to upload</span>
-            <input type='file' name = 'org_photo' class='drop-zone__input'>
+            
+            <div class = 'inbodsDivs'>
+                <p class = 'labes'>Organization Description</p>
+                <input class = 'inp' type = 'text' name = 'org_details' value = '".$row['org_details']."' />
             </div>
-               
-                <button class = 'imgbtn' name = 'update_img'>Update Image<button>
-                </div>
-                </div>
-            </form>
-            <p></p>
-            <button class = 'updateBtn' name = 'update' value = ".$row['id'].">Update</button>
-            </div>
+            
         </form>
        ";
+       echo
+       "<form method = 'POST' enctype = 'multipart/form-data'>
+       <div class = 'inbodsDiv' >
+       <p class = 'labes'>Photo</p>
+
+       <div class = 'unity'>
+       <div class='drop-zone'>
+       <span class='drop-zone__prompt'>Drop file here or click to upload</span>
+       <input type='file' name = 'org_photo' class='drop-zone__input'>
+       </div>
+          
+           <button class = 'imgbtn' name = 'update_img'>Update Image</button>
+           </div>
+           </div>
+           <div class = 'btnS'>
+            <button class = 'updateBtn' name = 'update' value = ".$row['id'].">Update</button>
+            </div>
+       </form>
+       
+     ";
     
         
       
@@ -165,6 +176,10 @@
         ?>
     </body>
 <style>
+    .btnS{
+        height: 40px;
+        margin-bottom: 3vh;
+    }
     .unity{
         display: flex;
     }
@@ -177,10 +192,9 @@
         border: none;
     }
     .updateBtn{
-        height: 50px;
-        margin-top: 20px;
-        width: 50%;
-        margin-left: 45%;
+        float: right;
+        margin-right: 5%;
+        padding: 10px;
         border: none;
         border-radius: 4px;
         background: #ffb830;
@@ -208,6 +222,13 @@
     margin-top: 2vh;
 }
 .inbodsDiv{
+    border: 1px solid blue;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 95%;
+    margin-left: 2%;
+}
+.inbodsDivs{
     border: 1px solid blue;
     border-radius: 4px;
     margin-bottom: 10px;

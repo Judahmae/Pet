@@ -7,7 +7,36 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Fredoka+One&family=Open+Sans:wght@500&family=Palette+Mosaic&family=Rubik:wght@500&family=Varela+Round&display=swap" rel="stylesheet">
     </head>
-
+    <style>
+        #imgTop{
+            height: 42px;
+            padding: 10px;
+            margin-left: 90%;
+        }
+        .hed{
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+        .ttlHead{
+            margin-top: 20px;
+            color: #777;
+        }
+        .couponBand{
+        width: 30px;
+        height:30px;
+    }
+    .band{
+        display: flex;
+        margin-bottom: 7px;
+    }
+    .icons{
+        font-size: 10px;
+        color: #777;
+        margin-top: 7px;
+        
+       
+    }
+    </style>
     <body>
         <?php 
             include ("inc/db.php");
@@ -26,9 +55,10 @@
         </div>
         <div class = 'hed' ><img src = '../uploads/hotel.gif' id = 'imgTop'><p class = 'ttlHead' ></p>
         </div><br>
-              <ul>
+        <h3>Pet Hotels</h3>
+              <div class = 'fdogs'>
                    <?php pet_hotels_facilities(); ?>
-                   </ul>
+                   </div>
           </div>
          
             <?php
@@ -37,19 +67,5 @@
             ?>
   
     </body>
-    <style>
-        #imgTop{
-            height: 42px;
-            padding: 10px;
-            margin-left: 90%;
-        }
-        .hed{
-            display: flex;
-            border-bottom: 1px solid #ddd;
-        }
-        .ttlHead{
-            margin-top: 20px;
-            color: #777;
-        }
-    </style>
+   
 </html>

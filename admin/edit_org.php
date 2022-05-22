@@ -12,6 +12,7 @@ include("inc/db.php");
       $paymaya = $_POST['paymaya'];
       $org_manager = $_POST['org_manager'];
       $facebook = $_POST['facebook'];
+      $org_details = $_POST['org_details'];
 
     //   var_dump($org_id);
     //   var_dump($org_name);
@@ -33,7 +34,8 @@ include("inc/db.php");
       website='$website',
       paymaya='$paymaya',
       org_manager='$org_manager',
-      facebook='$facebook'
+      facebook='$facebook',
+      org_details='$org_details'
       WHERE 
       id = '$org_id'");
 

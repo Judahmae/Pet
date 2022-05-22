@@ -101,5 +101,8 @@
             color: white;
             background: #5a5bf3;
         }
+        #bodyleft{
+            padding-bottom: 20vh;
+        }
     </style>
 </html>

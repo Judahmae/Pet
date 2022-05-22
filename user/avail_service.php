@@ -40,7 +40,7 @@
     .maines{
         display: grid;
         grid-template-columns: 40% 60%;
-        width: 50%;
+        width: 70%;
         padding: 10px;
         margin-left: 25%;
         row-gap: 20px;

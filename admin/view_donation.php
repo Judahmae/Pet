@@ -28,13 +28,12 @@
                 <li><a href="manage_partner.php">Manage Partners</a></li>
                 <li><a href="ledger.php">Ledger</a></li>
             </ul>
-        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Products</a></li>
+        <li><a href = "/Pet/admin/products.php"><img src="../uploads/sales4.svg" class="navicons">Product Inventory</a></li>
         <li><a href = "/Pet/admin/add_products.php"><img src="../uploads/box.svg" class="navicons">Add Product</a></li>
         <li><a href = "/Pet/admin/viewall_products.php"><img src="../uploads/deliver.svg" class="navicons">Deliveries(<?php echo count_deliveries();?>)</a></li>
         <li><a href = "/Pet/admin/viewall_orders.php"><img src="../uploads/deliver.svg" class="navicons">Orders(<?php echo count_orders();?>)</a></li>
-        <li ><a href= "/Pet/admin/viewall_coupons.php"><img src="../uploads/coupon.svg" class="navicons">Coupons</a></li> 
         <li><a href= "/Pet/admin/users.php"><img src="../uploads/user.svg" class="navicons">Users</a></li> 
-        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Sales Inventory</a></li>
+        <li><a href= "/Pet/admin/sales.php"><img src="../uploads/deliver.svg" class="navicons">Generate Report</a></li>
         <li><a href= "/Pet/admin/petcenterApplication.php"><img src="../uploads/deliver.svg" class="navicons">Pet Center Application</a></li>
         </ul>
 </div>
@@ -73,13 +72,12 @@ background: #28287774;
     color: white;
 }
 #forming{
-    display: grid;
-        grid-template-columns: 50% 50%;
         font-size: 14px;
         margin-top: 20px;
 }
 .body{
     margin-top: 7vh;
+    margin-bottom: 3vh;
     background: #fff;
     width: 95%;
     border-radius: 5px;
@@ -92,10 +90,11 @@ background: #28287774;
     border-radius: 4px;
     margin-bottom: 10px;
     width: 90%;
-    border: 1px solid blue;
+    margin-left: 5%;
 }
 .imagesP{
     width: 90%;
+    margin-left: 5%;
 }
 .imageDiv{
     margin-bottom: 20px;
@@ -103,7 +102,30 @@ background: #28287774;
 #views2{
     padding: 10px;
     float: right;
-    margin-right: 10%;
+    margin-right: 5%;
+    font-family: "Varela Round", sans-serif;
+    color: white;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: #ffb830;
+    border-radius: 4px;
+    width: 30%;
 }
+#aksyon{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 40px;
+}
+.lebss{
+        font-family: "Varela Round", sans-serif;
+        color: #777;
+    }
+    .dates{
+        border: 1px solid #aaa;
+        padding: 10px;
+        border-radius: 4px;
+        min-height: 30px;
+    }
     </style>
 </html>
